@@ -8,8 +8,8 @@ TBA
 
 ## Style guidelines for code
 - All documentation will be written in English, except in cases when Spanish is desirable because of practicity ([example](https://github.com/lualparedes/guia-web/blob/master/README.md#todo-general)).
-- The naming convention that will be used is BEM.
-- The coding approach will follow OOCSS principles.
+- The naming convention that will be used is [BEM](https://github.com/lualparedes/guia-web/blob/master/README.md#useful-resources-for-code-styling).
+- The coding approach will follow [OOCSS](https://github.com/lualparedes/guia-web/blob/master/README.md#useful-resources-for-code-styling) principles.
 - SCSS code should be indented in the following order:
 ```sass
   .parent {
@@ -33,6 +33,7 @@ TBA
 - [Basics of design systems for the web](https://css-tricks.com/design-systems-building-future/)
 - [BEM naming convention](https://en.bem.info/methodology/quick-start/)
 - [HTML semantics](http://nicolasgallagher.com/about-html-semantics-front-end-architecture/)
+- [Basics of CSS methodologies](http://learn.shayhowe.com/advanced-html-css/performance-organization/)
 <br><br>
 
 ## ToDo (general)
