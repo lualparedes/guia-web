@@ -7,7 +7,7 @@ TBA
 <br><br>
 
 ## Style guidelines for code
-- All documentation will be written in English, except in cases when Spanish is desirable because of practicity (example: section ToDo of this document).
+- All documentation will be written in English, except in cases when Spanish is desirable because of practicity ([example](https://github.com/lualparedes/guia-web/blob/master/README.md#todo-general)).
 - The naming convention that will be used is BEM.
 - The coding approach will follow OOCSS principles.
 - SCSS code should be indented in the following order:
