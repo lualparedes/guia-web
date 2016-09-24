@@ -7,6 +7,16 @@ TBA
 <br><br>
 
 ## Style guidelines for code
+
+### Commits
+- Commit when you have added a substantial ammount of code (an entire journey, a section, corrected a bug, etc.)
+- Always write a message when commiting and make it short but meaningful:
+```
+  git commit -m 'updated README.md'
+```
+<br><br>
+
+### SCSS
 - All documentation will be written in English, except in cases when Spanish is desirable because of practicity ([example](https://github.com/lualparedes/guia-web/blob/master/README.md#todo-general)).
 - The naming convention that will be used is [BEM](https://github.com/lualparedes/guia-web/blob/master/README.md#useful-resources-for-code-styling).
 - The coding approach will follow [OOCSS](https://github.com/lualparedes/guia-web/blob/master/README.md#useful-resources-for-code-styling) principles.
