@@ -1,11 +1,39 @@
 # guia-web
 Website dev for astronomy group GUIA USB
+<br><br>
+
+## File structure
+TBA
+<br><br>
+
+## Style guidelines for code
+- All documentation will be written in English, except in cases when Spanish is desirable because of practicity (example: section ToDo of this document).
+- The naming convention that will be used is BEM.
+- The coding approach will follow OOCSS principles.
+- SCSS code should be indented in the following order:
+```sass
+  .parent {
+      // 1. styles directly applied to the element with the parent selector
+      // 2. styles applied to events (:hover, :selection, etc.)
+      // 3. styles applied to children
+  }
+```
+- Whenever a block is apllied to more than 1 selector, each selector must be written in a separated line to increase readability:
+```sass
+  .main-class,
+  .other-class {
+      // styles
+  }
+```
+- If the same block of code is used in several ocassions, consider refactoring defining a single class for that block of code or creating a `@mixin`.
+<br><br>
 
 ## Useful resources for code styling
 - [How to write in a .md file](https://guides.github.com/features/mastering-markdown/)
 - [Basics of design systems for the web](https://css-tricks.com/design-systems-building-future/)
 - [BEM naming convention](https://en.bem.info/methodology/quick-start/)
 - [HTML semantics](http://nicolasgallagher.com/about-html-semantics-front-end-architecture/)
+<br><br>
 
 ## ToDo (general)
 - [ ] Exportar todos los diagramas de pantallas (a.k.a. wireframes de las páginas).*
