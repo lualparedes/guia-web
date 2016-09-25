@@ -28,7 +28,7 @@ TBA
       // 3. styles applied to children
   }
 ```
-- Whenever a block is apllied to more than 1 selector, each selector must be written in a separated line to increase readability:
+- Whenever a block is aplied to more than 1 selector, each selector must be written in a separated line to increase readability:
 ```sass
   .main-class,
   .other-class {
