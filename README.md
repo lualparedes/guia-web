@@ -52,5 +52,9 @@ TBA
 - [ ] Escribir la documentación inicial con las normas de estilo, convención de nombres y organización de archivos.*
 - [ ] Desarrollo de patrones de diseño (en código).
 - [ ] Implementación de front-end.
-- [ ] Implementación de back-end -todavía no me decido entre Jekyll o Wordpress.
+- [ ] Implementación de back-end (Jekyll).
 - [ ] Despliegue en servidor en vivo.
+<br><br>
+
+## Doubts?
+Just reach out.
