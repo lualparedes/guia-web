@@ -1,0 +1,31 @@
+/***** GENERAL *****/
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    color: inherit;
+}
+
+html {
+    font-family: $text;
+    font-weight: 300;
+    color: $text_c;
+    font-size: 18px;
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
