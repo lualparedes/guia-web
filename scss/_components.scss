@@ -1,1 +1,140 @@
 /***** COMPONENTS *****/
+
+/*
+
+hero
+
+jumbotron
+
+card
+	card-news
+	card-subs
+
+wrap
+
+main
+
+grid
+
+vertical ryhthm
+
+*/
+
+.hero {
+	background: url(../img/hero-bg.png) center;
+	background-size: cover;
+	height: 90vh;
+	min-height: 480px;
+	display:flex;
+	align-items: flex-end;
+	justify-content: center;
+	.wrap {
+		margin: 0;
+	}
+}
+
+.jumbotron {
+	overflow: hidden;
+	padding: 4rem 2rem;
+	.label {
+		margin-bottom: .5rem;
+		position: relative;
+		left: -.5rem;
+	}
+}
+
+.card {
+	background: #fff;
+	overflow: hidden;
+	height: 240px;
+	border-bottom: 1px solid rgba($text_c,.3);
+	//box-shadow: 0px 2px 2.5px rgba(#000,.1), // bottom
+    //           -2.5px 2px 2.5px rgba(#000,.1), // left
+    //            2.5px 2px 2.5px rgba(#000,.1); // right
+}
+
+.card-news {
+	display: flex;
+	position: relative;
+	.card-info {
+		width: 60%;
+		z-index: 2;
+		position: relative;
+		h2 {
+			position: relative;
+			left: 1rem;
+			&:hover {
+				color: $solid1;
+			}
+		}
+		a.read-more {
+			position: absolute;
+			bottom: 1rem;
+			left: 1rem;
+			&::after {
+				content: ' ';
+				height: 2px;
+				width: 40%;
+				background: $grad1;
+				position: absolute;
+				left: 0;
+				bottom: -2px;
+			}
+			&:hover {
+				&::after {
+					transition: all .25s ease-in-out;
+					width: 100%;
+				}
+			}
+		}
+	}
+	.card-img {
+		background: url(../img/hero-bg.png) center;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		right: 0;
+		background-size: cover;
+		width: 40%;
+	}
+}
+
+.card-subs {
+	height: 520px;
+	.card-img {
+		background: url(../img/hero-bg.png) center;
+		background-size: cover;
+		height: 280px;
+		padding: 2rem;
+		display: flex;
+		align-items: flex-end;
+	}
+	.card-info {
+		padding: 2rem;
+		.btn {
+			margin: auto;
+		}
+	}
+}
+
+.wrap {
+	width: 90%;
+	margin: auto;
+	position: relative;
+	max-width: 900px,
+}
+
+.main {
+	background: $subtle;
+	border-bottom: 1px solid rgba($text_c,.5);
+	padding: 2rem 0;
+}
+
+
+@media screen and (min-width: 640px){
+
+	.jumbotron  {
+
+	}
+
+}

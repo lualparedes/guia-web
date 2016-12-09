@@ -3,10 +3,23 @@
 /*==== Variables ====*/
 
 /*---- Swatches ----*/
-$text_c: ;
+$accent1: #8446c8;
+$accent2: #38b6e3;
+$solid1: #214478;
+$solid2: #0b1728;
+$text_c: #333;
+$subtle: #f2f2f2;
+
+/*---- Gradients ----*/
+$grad1: linear-gradient(to right, $accent1,$solid1);
+$grad2: linear-gradient($solid1, $solid2);
 
 /*---- Fonts ----*/
-$text: ;
+$text: 'Source Sans Pro', sans-serif;
+$text_article: 'Lora', serif;
+
+/*---- Measures ----*/
+$vu: 60px;
 
 
 /*==== Mixins ====*/
