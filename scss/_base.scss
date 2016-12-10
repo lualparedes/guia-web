@@ -13,6 +13,7 @@ $subtle: #f2f2f2;
 /*---- Gradients ----*/
 $grad1: linear-gradient(to right, $accent1,$solid1);
 $grad2: linear-gradient($solid1, $solid2);
+$grad3: linear-gradient(#fff 0%,  #fff 20%, #eee 70%, #ddd 100%);
 
 /*---- Fonts ----*/
 $text: 'Source Sans Pro', sans-serif;

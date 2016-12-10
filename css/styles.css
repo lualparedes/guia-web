@@ -28,6 +28,9 @@ html {
   color: #333;
   font-size: 20px; }
 
+body {
+  overflow-x: hidden; }
+
 a {
   text-decoration: none; }
 
@@ -118,10 +121,6 @@ article {
     padding: 0 1rem;
     border-left: 4px solid #214478; }
 
-/*Styles for ul*/
-ul {
-  list-style: none; }
-
 @media screen and (min-width: 640px) {
   h1 {
     font-size: 3.3rem; }
@@ -153,6 +152,12 @@ ul {
 /***** COMPONENTS *****/
 /*
 
+drawer
+
+content
+
+header
+
 hero
 
 jumbotron
@@ -169,9 +174,113 @@ grid
 
 vertical ryhthm
 
-slider-wrapper
-
 */
+.drawer {
+  position: fixed;
+  z-index: 88;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100vh;
+  display: inline-block;
+  background: #0b1728;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .drawer ul {
+    width: 100%; }
+    .drawer ul li {
+      list-style-type: none; }
+      .drawer ul li.page-current a {
+        border-left: 8px solid #8446c8; }
+      .drawer ul li a {
+        display: block;
+        height: 60px;
+        padding: .8rem 2rem;
+        background: #0b1728;
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: .1em;
+        border-left: 8px solid #0b1728; }
+        .drawer ul li a:hover {
+          background: linear-gradient(to right, #8446c8, #214478);
+          letter-spacing: .2em;
+          font-weight: 900;
+          border-left: 8px solid #8446c8; }
+
+.content {
+  position: relative;
+  width: 100%;
+  left: 0; }
+
+header {
+  height: 48px;
+  background: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 77;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  display: flex; }
+  header .logo-squared {
+    height: 48px; }
+  header .nav-desktop {
+    display: none; }
+  header .search {
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    top: 0;
+    right: 48px; }
+    header .search .in {
+      background: #f2f2f2;
+      border: 0;
+      display: inline-block;
+      padding-right: 40px; }
+    header .search .icon-search {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      font-size: 1.1rem; }
+  header .nav-trigger {
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    transform: rotate(0deg);
+    transition: .5s ease-in-out; }
+    header .nav-trigger:hover {
+      background: #f2f2f2; }
+    header .nav-trigger span {
+      display: block;
+      position: absolute;
+      height: 3px;
+      border-radius: 1.5px;
+      width: 50%;
+      background: #333;
+      opacity: 1;
+      left: 25%;
+      transform: rotate(0deg);
+      transition: .25s ease-in-out; }
+      header .nav-trigger span:nth-child(1) {
+        top: 14px; }
+      header .nav-trigger span:nth-child(2) {
+        top: 22px; }
+      header .nav-trigger span:nth-child(3) {
+        top: 30px; }
+    header .nav-trigger.open span:nth-child(1) {
+      top: 22px;
+      transform: rotate(135deg); }
+    header .nav-trigger.open span:nth-child(2) {
+      opacity: 0;
+      left: -60px; }
+    header .nav-trigger.open span:nth-child(3) {
+      top: 22px;
+      transform: rotate(-135deg); }
+
 .hero {
   background: url(../img/hero-bg.png) center;
   background-size: cover;
@@ -258,69 +367,43 @@ slider-wrapper
   border-bottom: 1px solid rgba(51, 51, 51, 0.5);
   padding: 2rem 0; }
 
-.slider-container {
-  width: 100%;
-  position: relative; }
-  .slider-container .slider-arrows {
+@media screen and (min-width: 640px) {
+  .drawer ul li a {
+    padding: .8rem 5rem; } }
+@media screen and (min-width: 840px) {
+  header {
     position: absolute;
-    top: 50%;
-    z-index: 1;
-    font-size: 40px;
-    color: #0b1728;
-    display: flex;
-    justify-content: space-between;
-    padding: 0 10px;
-    width: 100%; }
-    .slider-container .slider-arrows li {
-      padding: 0 15px;
-      background: rgba(242, 242, 242, 0.5);
-      border-radius: 50%; }
-      .slider-container .slider-arrows li:hover {
-        cursor: pointer;
-        color: #f2f2f2;
-        background: rgba(11, 23, 40, 0.5); }
-  .slider-container .slider-controls {
-    width: 100%;
-    position: absolute;
-    bottom: 0px;
-    text-align: center;
-    z-index: 2; }
-    .slider-container .slider-controls li {
-      display: inline-block;
-      border-radius: 50%;
-      margin: 0 4px;
-      width: 12px;
-      height: 12px;
-      cursor: pointer;
-      background: #0b1728; }
-      .slider-container .slider-controls li.active {
-        background: blue; }
-
-.slider-wrapper {
-  overflow: hidden;
-  position: relative;
-  height: 600px;
-  width: 100%; }
-  .slider-wrapper li {
-    display: none; }
-    .slider-wrapper li.slide-current {
-      display: block; }
-    .slider-wrapper li img {
-      position: absolute;
-      top: 0;
-      z-index: -1;
-      max-width: 100%;
-      height: auto; }
-  .slider-wrapper .caption {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    z-index: 2;
-    height: 30%;
-    width: 100%;
-    background: rgba(255, 255, 255, 0.5);
-    padding: 0 10px 10px 10px; }
-
+    background: linear-gradient(#fff 0%, #fff 20%, #eee 70%, #ddd 100%);
+    top: 48px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 4px;
+    overflow: hidden;
+    width: 766.06px;
+    box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.05), 0px -8px 10px rgba(0, 0, 0, 0.05), -10px -8px 10px rgba(0, 0, 0, 0.05), 10px -8px 10px rgba(0, 0, 0, 0.05), -10px 8px 10px rgba(0, 0, 0, 0.05), 10px 8px 10px rgba(0, 0, 0, 0.05); }
+    header .nav-desktop {
+      display: inline-block; }
+      header .nav-desktop ul {
+        display: flex;
+        padding: 0 1rem; }
+        header .nav-desktop ul li {
+          list-style-type: none; }
+          header .nav-desktop ul li.page-current a {
+            color: #214478;
+            font-weight: 600;
+            border-bottom: 4px solid #214478; }
+          header .nav-desktop ul li a {
+            display: block;
+            padding: .47rem 1rem;
+            border-bottom: 4px solid #ddd; }
+            header .nav-desktop ul li a:hover {
+              color: #214478; }
+    header .search {
+      right: 0; }
+      header .search .in {
+        background: #eee; }
+    header .nav-trigger {
+      display: none; } }
 @font-face {
   font-family: 'icomoon';
   src: url("../fonts/icomoon.eot?l6nrjz");
