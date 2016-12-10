@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /***** H1 TITLE *****/
 /*==== H2 Title ====*/
 /*---- H3 Title ----*/
@@ -566,5 +567,27 @@ barebones
     color: #333;
     background: #fff;
     border: 0px; }
+
+/*Hago este scss porqué no sé muy bien dónde colocar cada cosa
+
+Prefiero mandarte los estilos y después tú los colocas en donde deben estar
+*/
+footer {
+  border: 3px solid #0b1728;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between; }
+  footer .footer-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; }
+    footer .footer-description h2 {
+      font-size: 1rem; }
+    footer .footer-description p {
+      margin: 10px 0; }
+      footer .footer-description p a {
+        margin-right: 10px; }
+    footer .footer-description .credits {
+      font-size: .7rem; }
 
 /*# sourceMappingURL=styles.css.map */
