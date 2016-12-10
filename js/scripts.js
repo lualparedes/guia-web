@@ -1,7 +1,5 @@
 $(document).ready(function(){
 
-
-
 /*==== On load ====*/
 
 /*---- Menu drawer ----*/
@@ -69,8 +67,6 @@ $(window).resize(function(){
 			$('.drawer').css('right', '-48px');
 		}
 	}
-		
-
 
 	/*---- Search ----*/
 	if ($('.search').width() != 48) {

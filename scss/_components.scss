@@ -21,8 +21,9 @@ wrap
 main
 
 grid
-
-vertical ryhthm
+	row
+	cols-md
+	cols-xs
 
 */
 
@@ -190,14 +191,17 @@ header {
 	overflow: hidden;
 	height: 240px;
 	border-bottom: 1px solid rgba($text_c,.3);
-	//box-shadow: 0px 2px 2.5px rgba(#000,.1), // bottom
-    //           -2.5px 2px 2.5px rgba(#000,.1), // left
-    //            2.5px 2px 2.5px rgba(#000,.1); // right
 }
 
 .card-news {
 	display: flex;
 	position: relative;
+	&:not(:only-child) {
+		margin-bottom: 1rem;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
 	.card-info {
 		width: 60%;
 		z-index: 2;
@@ -242,7 +246,7 @@ header {
 }
 
 .card-subs {
-	height: 520px;
+	height: 500px;
 	.card-img {
 		background: url(../img/hero-bg.png) center;
 		background-size: cover;
@@ -252,7 +256,7 @@ header {
 		align-items: flex-end;
 	}
 	.card-info {
-		padding: 2rem;
+		padding: 1.5rem 2rem;
 		.btn {
 			margin: auto;
 		}
@@ -270,6 +274,22 @@ header {
 	background: $subtle;
 	border-bottom: 1px solid rgba($text_c,.5);
 	padding: 2rem 0;
+}
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+[class^="col-"] {
+	width: 100%;
+	padding: .5rem;
+}
+
+// extra small columns 
+// (they keep their width even in small viewports)
+@for $i from 1 through 11 {
+	.col-xs-#{$i} { width: $i*8.3333%; }
 }
 
 
@@ -337,6 +357,12 @@ header {
 		.nav-trigger {
 			display: none;
 		}
+	}
+
+	// regular colums
+	// (100% wide in small viewports)
+	@for $i from 1 through 11 {
+		.col-md-#{$i} { width: $i*8.3333%; }
 	}
 
 }

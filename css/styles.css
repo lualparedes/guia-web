@@ -120,6 +120,10 @@ article {
     font-style: italic;
     padding: 0 1rem;
     border-left: 4px solid #214478; }
+  article ol,
+  article ul {
+    margin-bottom: 1.4rem;
+    padding-left: 1rem; }
 
 @media screen and (min-width: 640px) {
   h1 {
@@ -171,8 +175,9 @@ wrap
 main
 
 grid
-
-vertical ryhthm
+	row
+	cols-md
+	cols-xs
 
 */
 .drawer {
@@ -309,6 +314,10 @@ header {
 .card-news {
   display: flex;
   position: relative; }
+  .card-news:not(:only-child) {
+    margin-bottom: 1rem; }
+    .card-news:not(:only-child):last-child {
+      margin-bottom: 0; }
   .card-news .card-info {
     width: 60%;
     z-index: 2;
@@ -343,7 +352,7 @@ header {
     width: 40%; }
 
 .card-subs {
-  height: 520px; }
+  height: 500px; }
   .card-subs .card-img {
     background: url(../img/hero-bg.png) center;
     background-size: cover;
@@ -352,7 +361,7 @@ header {
     display: flex;
     align-items: flex-end; }
   .card-subs .card-info {
-    padding: 2rem; }
+    padding: 1.5rem 2rem; }
     .card-subs .card-info .btn {
       margin: auto; }
 
@@ -366,6 +375,47 @@ header {
   background: #f2f2f2;
   border-bottom: 1px solid rgba(51, 51, 51, 0.5);
   padding: 2rem 0; }
+
+.row {
+  display: flex;
+  flex-wrap: wrap; }
+
+[class^="col-"] {
+  width: 100%;
+  padding: .5rem; }
+
+.col-xs-1 {
+  width: 8.3333%; }
+
+.col-xs-2 {
+  width: 16.6666%; }
+
+.col-xs-3 {
+  width: 24.9999%; }
+
+.col-xs-4 {
+  width: 33.3332%; }
+
+.col-xs-5 {
+  width: 41.6665%; }
+
+.col-xs-6 {
+  width: 49.9998%; }
+
+.col-xs-7 {
+  width: 58.3331%; }
+
+.col-xs-8 {
+  width: 66.6664%; }
+
+.col-xs-9 {
+  width: 74.9997%; }
+
+.col-xs-10 {
+  width: 83.333%; }
+
+.col-xs-11 {
+  width: 91.6663%; }
 
 @media screen and (min-width: 640px) {
   .drawer ul li a {
@@ -403,7 +453,40 @@ header {
       header .search .in {
         background: #eee; }
     header .nav-trigger {
-      display: none; } }
+      display: none; }
+
+  .col-md-1 {
+    width: 8.3333%; }
+
+  .col-md-2 {
+    width: 16.6666%; }
+
+  .col-md-3 {
+    width: 24.9999%; }
+
+  .col-md-4 {
+    width: 33.3332%; }
+
+  .col-md-5 {
+    width: 41.6665%; }
+
+  .col-md-6 {
+    width: 49.9998%; }
+
+  .col-md-7 {
+    width: 58.3331%; }
+
+  .col-md-8 {
+    width: 66.6664%; }
+
+  .col-md-9 {
+    width: 74.9997%; }
+
+  .col-md-10 {
+    width: 83.333%; }
+
+  .col-md-11 {
+    width: 91.6663%; } }
 @font-face {
   font-family: 'icomoon';
   src: url("../fonts/icomoon.eot?l6nrjz");
