@@ -1,0 +1,153 @@
+/***** GENERAL *****/
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    color: inherit;
+    transition: all .25s ease-in-out;
+    &::selection {
+        background: rgba($accent2,.5);
+    }
+}
+
+html {
+    font-family: $text;
+    font-weight: 300;
+    color: $text_c;
+    font-size: 20px;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+
+/*
+
+h1
+    with background
+h2
+    with background
+
+label
+
+in
+
+article
+    h2
+    h3
+    p
+    a
+    blockquote
+
+*/
+
+h1,
+h2 {
+    font-weight: 900;
+    color: $solid2;
+    font-size: 2rem;
+    text-transform: uppercase;
+    line-height: 1em;
+    margin-top: .12em;
+    & span {
+        display: inline;
+        background: #fff;
+        box-shadow: 10px 0 0 #fff, -10px 0 0 #fff;
+    }   
+}
+
+h2 {
+    margin-top: .4em;
+    font-size: 1.78rem;
+}
+
+label {
+    margin-bottom: .2rem;
+    display: block;
+}
+
+.in {
+    width: 100%;
+    display: block;
+    border-radius: 2px;
+    padding: .5rem;
+    height: 48px;
+    border: 1px solid #ddd;
+    margin-bottom: 1rem;
+}
+
+article {
+    font-family: $text_article;
+    padding: 2.4rem 0;
+    h2,
+    h3 {
+        font-family: $text;
+        font-weight: 900;
+        text-transform: none;
+        margin: 2.4rem 0 .7rem 0;
+        color: $solid1;
+        line-height: 1em;
+    }
+    h3 {
+        text-transform: uppercase;
+        font-size: 1.2rem;
+    }
+    p,
+    blockquote {
+        line-height: 1.4em;
+        margin-bottom: 1.4rem;
+    }
+    a {
+        color: $solid1;
+        position: relative;
+        box-shadow: 0 1px 0 $solid1;
+        transition: all 0s;
+        &:hover {
+            color: $accent1;
+            box-shadow: 0 2px 0 $accent1;
+        }
+        &:visited {
+            box-shadow: 0 0 0 #fff;
+        }
+    }
+    blockquote {
+        font-style: italic;
+        padding: 0 1rem;
+        border-left: 4px solid $solid1;
+    }
+    ol,
+    ul {
+        margin-bottom: 1.4rem;
+        padding-left: 1rem;
+    }
+}
+
+@media screen and (min-width:640px) {
+
+    h1 {
+        font-size: 3.3rem;
+    }
+
+    article {
+        blockquote {
+            padding: 1rem;
+            background: $subtle;
+            margin: 0 5% 1.4rem 5%;
+        }
+    }
+
+}
