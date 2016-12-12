@@ -18,6 +18,13 @@ barebones
 	padding: 0 2rem;
 	border-radius: 2px;
 	display: block;
+	line-height: 1;
+	a {
+		display: block;
+		padding: .65rem 2rem;
+		margin: 0 -2rem;
+		transition: all 0s;
+	}
 }
 
 .btn-fi {

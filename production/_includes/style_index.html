@@ -1,0 +1,104 @@
+<style>
+	.hero {
+		display: flex;
+		align-items: center;
+		height: 100vh;
+		background: url(../img/hero-bg.png) center;
+		background-size: cover;
+	}
+	.jumbotron {
+		position: relative;
+		top: 2rem;
+	}
+	.jumbotron h1 {
+		color: #fff;
+	}
+	.jumbotron .btn {
+		margin: 2rem 0 0 0;
+		position: relative;
+	}
+
+	.mini-about {
+		height: 770px;
+		background: linear-gradient(130deg,#fff 0%,#fff 50%,#efefef 100%);
+	}
+	.mini-about-img {
+		background: url(../img/mini-about-bg.jpg) center;
+		background-size: cover;
+		height: 385px;
+	}
+	.mini-about-info {
+		height: 385px;
+		display: flex;
+		align-items: center;
+		padding: 2rem;
+	}
+	.mini-about-info .btn {
+		margin-top: 2rem;
+	}
+
+	.guia-options .wrap:first-child {
+		height: 385px;
+		display: flex;
+		align-items: center;
+		width: 100%;
+		padding: 2rem;
+	}
+	.guia-options .wrap:last-child {
+		width: 100%;
+		max-width: 1000px;
+	}
+	.guia-options .col-md-6 {
+		padding: 0;
+	}
+	.guia-option-1 {
+		background: url(../img/guia-option-1-bg.png) center;
+		background-size: cover;
+	}
+	.guia-option-2 {
+		background: url(../img/guia-option-2-bg.png) center;
+		background-size: cover;
+	}
+	.guia-option-3 {
+		background: url(../img/guia-option-3-bg.jpg) center;
+		background-size: cover;
+	}
+	.guia-option-4 {
+		background: url(../img/guia-option-4-bg.jpg) center;
+		background-size: cover;
+	}
+
+
+	@media screen and (min-width: 840px) {
+
+		.mini-about-img,
+		.mini-about-info {
+			height: 770px;
+			padding: 4em;
+		}
+
+		.guia-options {
+			padding-bottom: 8rem;
+		}
+		.guia-options .wrap:first-child p {
+			width: 50%;
+			margin: auto;
+			text-align: center;
+		}
+		.guia-option-1,
+		.guia-option-4 {
+			height: 440px;
+			width: 80%;
+		}
+		.guia-option-2,
+		.guia-option-3 {
+			height: 320px;
+		}
+		.guia-option-1 {
+			margin-left: 20%;
+		}
+		.guia-option-2 {
+			margin-top: 120px;
+		}
+	}
+</style>

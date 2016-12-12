@@ -16,6 +16,8 @@ card
 	card-news
 	card-subs
 
+card-bg
+
 wrap
 
 main
@@ -170,6 +172,7 @@ header {
 	background-size: cover;
 	height: 90vh;
 	min-height: 480px;
+	max-height: 770px;
 	display:flex;
 	align-items: flex-end;
 	justify-content: center;
@@ -265,6 +268,57 @@ header {
 	}
 }
 
+.card-bg {
+	list-style-type: none;
+	height: 240px;
+	background: url(../img/hero-bg.png) center;
+	background-size: cover;
+	a {
+		height: 100%;
+		display: block;
+		text-align: center;
+		color: #fff;
+		text-transform: uppercase;
+		padding: 0 5rem;
+		font-size: 1.2rem;
+		background: rgba($solid2,.5);
+		transition: .25s all ease-out;
+		text-shadow: 0 2px 3px rgba(#000,.9);
+		@include flex();
+		&:hover {
+			background: transparent;
+			padding: 0 4.5rem;
+			span {
+				letter-spacing: 1px;
+				&::before,
+				&::after {
+					width: 70%;
+				}
+			}
+		}
+		span {
+			display: block;
+			position: relative;
+			&::before,
+			&::after {
+				content: ' ';
+				transition: .25s all ease-out;
+				height: 2px;
+				width: 50%;
+				background: #fff;
+				box-shadow: 0 2px 3px rgba(#000,.5);
+				position: absolute;
+				bottom: -.5rem;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+			&::after {
+				top: -.5rem;
+			}
+		}	
+	}	
+}
+
 .wrap {
 	width: 90%;
 	margin: auto;
@@ -325,6 +379,12 @@ footer {
 			border-top: 1px solid $text_c;
 			font-size: .8rem;
 			width: 100%;
+			a {
+				border-bottom: 1px dotted $text_c;
+				&:hover {
+					border-bottom: 0;
+				}
+			}
 		}
 	}
 	.logo-foo {
@@ -431,6 +491,10 @@ footer {
 		.nav-trigger {
 			display: none;
 		}
+	}
+
+	.wrap-half {
+		max-width: 450px;
 	}
 
 	// regular colums

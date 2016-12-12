@@ -3,7 +3,10 @@
 <head>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="/css/styles.css">
-	<link rel="icon" href="img/favicon.png">
+	{% if page.title == 'GUIA USB' %}
+		{% include style_index.html %}
+	{% endif %}
+	<link rel="shortcut icon" type="image/png" href="{{ "/img/favicon.png" | prepend: site.baseurl }}" >
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="">
 	<title>{{ page.title }}</title>
@@ -12,14 +15,13 @@
 <body>
 
 
-
 <nav class="drawer">
 	<ul>
-		<li class="page-current"><a href="">Inicio</a></li>
-		<li><a href="nosotros.html">Nosotros</a></li>
-		<li><a href="calendario.html">Calendario</a></li>
-		<li><a href="blog.html">Blog</a></li>
-		<li><a href="contacto.html">Contacto</a></li>
+		<li class="page-current"><a href="/">Inicio</a></li>
+		<li><a href="nosotros">Nosotros</a></li>
+		<li><a href="calendario">Calendario</a></li>
+		<li><a href="blog">Blog</a></li>
+		<li><a href="contacto">Contacto</a></li>
 	</ul>
 </nav><!--
 
@@ -51,11 +53,11 @@
 		</div>
 		<nav class="nav-desktop">
 			<ul>
-				<li class="page-current"><a href="">Inicio</a></li>
-				<li><a href="nosotros.html">Nosotros</a></li>
-				<li><a href="calendario.html">Calendario</a></li>
-				<li><a href="blog.html">Blog</a></li>
-				<li><a href="contacto.html">Contacto</a></li>
+				<li class="page-current"><a href="/">Inicio</a></li>
+				<li><a href="nosotros">Nosotros</a></li>
+				<li><a href="calendario">Calendario</a></li>
+				<li><a href="blog">Blog</a></li>
+				<li><a href="contacto">Contacto</a></li>
 			</ul>
 		</nav>
 		<div class="search">
