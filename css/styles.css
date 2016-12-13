@@ -746,6 +746,9 @@ barebones
   min-width: 415px; }
   .info-contact p {
     padding: 25px; }
+  .info-contact span {
+    margin-right: 10px;
+    font-size: 16px; }
 
 /*Hago este scss porqué no sé muy bien dónde colocar cada cosa
 
