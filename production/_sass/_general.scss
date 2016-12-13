@@ -42,6 +42,8 @@ h1
 h2
     with background
 
+form
+
 label
 
 in
@@ -75,9 +77,18 @@ h2 {
     font-size: 1.78rem;
 }
 
+form {
+    .btn {
+        float: right;
+    }
+}
+
 label {
     margin-bottom: .2rem;
     display: block;
+    color: $solid1;
+    text-transform: uppercase;
+    font-weight: 700;
 }
 
 .in {
@@ -90,7 +101,12 @@ label {
     margin-bottom: 1rem;
 }
 
-.main > .wrap,
+
+textarea.in {
+    height: 48*4px;
+    resize: none;
+}
+
 article {
     font-family: $text_article;
     padding: 2.4rem 0;
