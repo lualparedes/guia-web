@@ -3,8 +3,14 @@
 <head>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="/css/styles.css">
-	{% if page.title == 'GUIA USB' %}
+	{% if page.id == 'index' %}
 		{% include style_index.html %}
+	{% elsif page.id == 'nosotros' %}
+		{% include style_nosotros.html %}
+	{% elsif page.id == 'contacto' %}
+		{% include style_contacto.html %}
+	{% elsif page.class == 'resultados' %}
+		{% include style_resultados.html %}
 	{% endif %}
 	<link rel="shortcut icon" type="image/png" href="{{ "/img/favicon.png" | prepend: site.baseurl }}" >
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,11 +23,31 @@
 
 <nav class="drawer">
 	<ul>
+		{% if page.id == 'index' %}
 		<li class="page-current"><a href="/">Inicio</a></li>
+		{% else %}
+		<li><a href="/">Inicio</a></li>
+		{% endif %}
+		{% if page.id == 'nosotros' %}
+		<li class="page-current"><a href="nosotros">Nosotros</a></li>
+		{% else %}
 		<li><a href="nosotros">Nosotros</a></li>
+		{% endif %}
+		{% if page.id == 'calendario' %}
+		<li class="page-current"><a href="calendario">Calendario</a></li>
+		{% else %}
 		<li><a href="calendario">Calendario</a></li>
+		{% endif %}
+		{% if page.class == 'blog' %}
+		<li class="page-current"><a href="blog">Blog</a></li>
+		{% else %}
 		<li><a href="blog">Blog</a></li>
+		{% endif %}
+		{% if page.id == 'contacto' %}
+		<li class="page-current"><a href="contacto">Contacto</a></li>
+		{% else %}
 		<li><a href="contacto">Contacto</a></li>
+		{% endif %}
 	</ul>
 </nav><!--
 
@@ -53,11 +79,31 @@
 		</div>
 		<nav class="nav-desktop">
 			<ul>
+				{% if page.id == 'index' %}
 				<li class="page-current"><a href="/">Inicio</a></li>
+				{% else %}
+				<li><a href="/">Inicio</a></li>
+				{% endif %}
+				{% if page.id == 'nosotros' %}
+				<li class="page-current"><a href="nosotros">Nosotros</a></li>
+				{% else %}
 				<li><a href="nosotros">Nosotros</a></li>
+				{% endif %}
+				{% if page.id == 'calendario' %}
+				<li class="page-current"><a href="calendario">Calendario</a></li>
+				{% else %}
 				<li><a href="calendario">Calendario</a></li>
+				{% endif %}
+				{% if page.class == 'blog' %}
+				<li class="page-current"><a href="blog">Blog</a></li>
+				{% else %}
 				<li><a href="blog">Blog</a></li>
+				{% endif %}
+				{% if page.id == 'contacto' %}
+				<li class="page-current"><a href="contacto">Contacto</a></li>
+				{% else %}
 				<li><a href="contacto">Contacto</a></li>
+				{% endif %}
 			</ul>
 		</nav>
 		<div class="search">

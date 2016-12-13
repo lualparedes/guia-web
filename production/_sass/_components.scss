@@ -20,6 +20,8 @@ card-bg
 
 wrap
 
+content
+
 main
 
 grid
@@ -327,8 +329,6 @@ header {
 }
 
 .main {
-	background: $subtle;
-	border-bottom: 1px solid rgba($text_c,.5);
 	padding: 2rem 0;
 }
 
@@ -350,7 +350,6 @@ header {
 
 footer {
 	background: $subtle;
-	border-top: 1px solid #ddd;
 	.foo-info {
 		display: flex;
 		flex-wrap: wrap;
