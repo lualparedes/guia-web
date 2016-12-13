@@ -29,6 +29,8 @@ grid
 	cols-md
 	cols-xs
 
+comments
+
 foo
 
 */
@@ -346,6 +348,13 @@ header {
 // (they keep their width even in small viewports)
 @for $i from 1 through 11 {
 	.col-xs-#{$i} { width: $i*8.3333%; }
+}
+
+.comments {
+	background: #fefefe;
+	margin-bottom: 4rem;
+	border-top: 2px solid #ddd;
+	padding: 2rem 1rem;
 }
 
 footer {
