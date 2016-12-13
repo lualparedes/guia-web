@@ -1,4 +1,25 @@
 @charset "UTF-8";
+/*
+Error: Inconsistent indentation: 1 tab was used for indentation, but the rest of the document was indented using 2 spaces.
+        on line 143 of css/styles.css
+
+138: /*
+139: 
+140: .no-trans (no transition)
+141: 
+142: .label (categoria)
+143: 	grad1
+144: 
+145: *\/
+146: .no-trans {
+147:   transition: all 0s; }
+148: 
+
+Backtrace:
+css/styles.css:143
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/engine.rb:486:in `block in tabulate'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/engine.rb:444:in `each'
+/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/engine.rb:444:in `each_with_index'
 /***** H1 TITLE *****/
 /*==== H2 Title ====*/
 /*---- H3 Title ----*/
@@ -626,27 +647,6 @@ barebones
     background: #fff;
     border: 0px; }
 
-/*Hago este scss porqué no sé muy bien dónde colocar cada cosa
-
-Prefiero mandarte los estilos y después tú los colocas en donde deben estar
-*/
-footer {
-  padding: 10px;
-  display: flex;
-  justify-content: space-between; }
-  footer .footer-description {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; }
-    footer .footer-description h2 {
-      font-size: 1rem; }
-    footer .footer-description p {
-      margin: 10px 0; }
-      footer .footer-description p a {
-        margin-right: 10px; }
-    footer .footer-description .credits {
-      font-size: .7rem; }
-
 .slider-container {
   width: 100%;
   position: relative; }
@@ -727,5 +727,41 @@ footer {
     position: absolute;
     top: 250px;
     left: 50px; }
+
+/*Contacto*/
+.FlexBox {
+  display: flex;
+  justify-content: space-around;
+  padding: 50px 0; }
+
+.contact-form input {
+  width: 100%; }
+.contact-form textarea {
+  resize: none;
+  overflow: scroll; }
+
+.info-contact {
+  width: 40%; }
+
+/*Hago este scss porqué no sé muy bien dónde colocar cada cosa
+
+Prefiero mandarte los estilos y después tú los colocas en donde deben estar
+*/
+footer {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between; }
+  footer .footer-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; }
+    footer .footer-description h2 {
+      font-size: 1rem; }
+    footer .footer-description p {
+      margin: 10px 0; }
+      footer .footer-description p a {
+        margin-right: 10px; }
+    footer .footer-description .credits {
+      font-size: .7rem; }
 
 /*# sourceMappingURL=styles.css.map */
