@@ -3,4 +3,26 @@
 		background: url(../img/contacto-hero.png) center;
 		background-size: cover;
 	}
+
+	.wrap > .row {
+		flex-direction: column-reverse;
+	}
+	.contact-info,
+	.contact-form {
+		padding-bottom: 3rem;
+	}
+	.col-xs-2 {
+		color: #214478;
+		text-align: right;
+		padding-top: .75rem;
+	}
+	.col-xs-10 a:hover {
+		text-decoration: underline;
+	}
+
+	@media screen and (min-width: 840px) {
+		.wrap > .row {
+			flex-direction: row;
+		}
+	}
 </style>
