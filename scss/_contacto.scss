@@ -3,6 +3,7 @@
 	display: flex;
 	justify-content: space-around;
 	padding: 50px 0;
+	flex-wrap: wrap;
 }
 
 .contact-form{
@@ -18,4 +19,9 @@
 
 .info-contact{
 	width: 40%;
+	min-width: 415px;
+
+	p{
+		padding: 25px;
+	}
 }

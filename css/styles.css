@@ -732,7 +732,8 @@ barebones
 .FlexBox {
   display: flex;
   justify-content: space-around;
-  padding: 50px 0; }
+  padding: 50px 0;
+  flex-wrap: wrap; }
 
 .contact-form input {
   width: 100%; }
@@ -741,7 +742,10 @@ barebones
   overflow: scroll; }
 
 .info-contact {
-  width: 40%; }
+  width: 40%;
+  min-width: 415px; }
+  .info-contact p {
+    padding: 25px; }
 
 /*Hago este scss porqué no sé muy bien dónde colocar cada cosa
 
