@@ -1,0 +1,21 @@
+/*Contacto*/
+.FlexBox{
+	display: flex;
+	justify-content: space-around;
+	padding: 50px 0;
+}
+
+.contact-form{
+	input{
+		width: 100%;
+	}
+
+	textarea{
+		resize: none;
+		overflow: scroll;
+	}
+}
+
+.info-contact{
+	width: 40%;
+}
