@@ -631,7 +631,6 @@ barebones
 Prefiero mandarte los estilos y después tú los colocas en donde deben estar
 */
 footer {
-  border: 3px solid #0b1728;
   padding: 10px;
   display: flex;
   justify-content: space-between; }
