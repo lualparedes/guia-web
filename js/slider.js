@@ -198,8 +198,4 @@
 
 	sliderModule.init({duration: 4000});
 
-}());<<<<<<< HEAD
-@import 'buttons';
-@import 'footer';
-@import 'slider';
-=======
+}());
