@@ -23,6 +23,22 @@ Templates, in turn make use of includes in order to keep the code easy to mainta
 - `id`: used to load custom styles for single pages (just like css ids), the value must correspond to the slug in the include `style_name-of-page.html`
 - `jumbotron-title`: text inside the H1 of the jumbotron.
 - `jumbotron-type`: the jumbotron has several skins: default, results. Each corresponds to the slug in `jumbotron_slug.html`
+- `post-date`: the date of punlication of a post. It's used to find assets specifics for the post, such as the hero image (`post-date-hero.png`)
+
+### Important name conventions
+
+- Posts
+```
+/_posts/YYYY-MM-DD-slug.html
+```
+- Post image for hero
+```
+/img/posts/YYY-MM-DD-hero.png
+```
+- Post images
+```
+/img/posts/YYY-MM-DD-img-NN.png
+```
 
 <br><br>
 

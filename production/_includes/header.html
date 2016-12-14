@@ -7,14 +7,18 @@
 		{% include style_index.html %}
 	{% elsif page.id == 'nosotros' %}
 		{% include style_nosotros.html %}
+	{% elsif page.id == 'calendario' %}
+		{% include style_calendario.html %}
 	{% elsif page.id == 'contacto' %}
 		{% include style_contacto.html %}
 	{% elsif page.class == 'resultados' %}
 		{% include style_resultados.html %}
+	{% elsif page.class == 'post' %}
+		{% include style_post.html %}
 	{% endif %}
 	<link rel="shortcut icon" type="image/png" href="{{ "/img/favicon.png" | prepend: site.baseurl }}" >
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="">
+	<meta name="description" content="El Grupo Universitario de Investigaciones Astronómicas (GUIA) es una organización estudiantil de la Universidad Simón Bolívar con más de dos décadas promoviendo la astronomía en Venezuela.">
 	<title>{{ page.title }}</title>
 </head>
 
@@ -29,24 +33,24 @@
 		<li><a href="/">Inicio</a></li>
 		{% endif %}
 		{% if page.id == 'nosotros' %}
-		<li class="page-current"><a href="nosotros">Nosotros</a></li>
+		<li class="page-current"><a href="/nosotros">Nosotros</a></li>
 		{% else %}
-		<li><a href="nosotros">Nosotros</a></li>
+		<li><a href="/nosotros">Nosotros</a></li>
 		{% endif %}
 		{% if page.id == 'calendario' %}
-		<li class="page-current"><a href="calendario">Calendario</a></li>
+		<li class="page-current"><a href="/calendario">Calendario</a></li>
 		{% else %}
-		<li><a href="calendario">Calendario</a></li>
+		<li><a href="/calendario">Calendario</a></li>
 		{% endif %}
-		{% if page.class == 'blog' %}
-		<li class="page-current"><a href="blog">Blog</a></li>
+		{% if page.id == 'blog' or page.class == 'post' %}
+		<li class="page-current"><a href="/blog">Blog</a></li>
 		{% else %}
-		<li><a href="blog">Blog</a></li>
+		<li><a href="/blog">Blog</a></li>
 		{% endif %}
 		{% if page.id == 'contacto' %}
-		<li class="page-current"><a href="contacto">Contacto</a></li>
+		<li class="page-current"><a href="/contacto">Contacto</a></li>
 		{% else %}
-		<li><a href="contacto">Contacto</a></li>
+		<li><a href="/contacto">Contacto</a></li>
 		{% endif %}
 	</ul>
 </nav><!--
@@ -85,24 +89,24 @@
 				<li><a href="/">Inicio</a></li>
 				{% endif %}
 				{% if page.id == 'nosotros' %}
-				<li class="page-current"><a href="nosotros">Nosotros</a></li>
+				<li class="page-current"><a href="/nosotros">Nosotros</a></li>
 				{% else %}
-				<li><a href="nosotros">Nosotros</a></li>
+				<li><a href="/nosotros">Nosotros</a></li>
 				{% endif %}
 				{% if page.id == 'calendario' %}
-				<li class="page-current"><a href="calendario">Calendario</a></li>
+				<li class="page-current"><a href="/calendario">Calendario</a></li>
 				{% else %}
-				<li><a href="calendario">Calendario</a></li>
+				<li><a href="/calendario">Calendario</a></li>
 				{% endif %}
-				{% if page.class == 'blog' %}
-				<li class="page-current"><a href="blog">Blog</a></li>
+				{% if page.id == 'blog' or page.class == 'post' %}
+				<li class="page-current"><a href="/blog">Blog</a></li>
 				{% else %}
-				<li><a href="blog">Blog</a></li>
+				<li><a href="/blog">Blog</a></li>
 				{% endif %}
 				{% if page.id == 'contacto' %}
-				<li class="page-current"><a href="contacto">Contacto</a></li>
+				<li class="page-current"><a href="/contacto">Contacto</a></li>
 				{% else %}
-				<li><a href="contacto">Contacto</a></li>
+				<li><a href="/contacto">Contacto</a></li>
 				{% endif %}
 			</ul>
 		</nav>

@@ -54,7 +54,9 @@ article
     p
     a
     blockquote
-
+    figure
+    ol
+    ul
 */
 
 h1,
@@ -145,6 +147,19 @@ article {
         font-style: italic;
         padding: 0 1rem;
         border-left: 4px solid $solid1;
+    }
+    figure {
+        margin-bottom: 1.4rem;
+        background: url(/img/figure-bg.png);
+        img {
+            border-bottom: 2px solid #fff;
+        }
+        figcaption {
+            font-style: italic;
+            padding: .7rem;
+            font-size: .8rem;
+            border-left: 4px solid #ddd;
+        }
     }
     ol,
     ul {
