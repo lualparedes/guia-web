@@ -715,15 +715,11 @@ barebones
 
 .info-contact {
   width: 60%;
-  min-width: 415px;
-  margin-left: 10px; }
-  .info-contact p {
-    padding: 25px;
-    margin-left: 10px;
-    min-width: 130px; }
+  min-width: 415px; }
   .info-contact span {
-    margin-right: 10px;
-    font-size: 16px; }
+    font-size: 18px;
+    text-align: center;
+    margin-top: 15px; }
 
 /*Hago este scss porqué no sé muy bien dónde colocar cada cosa
 
@@ -758,7 +754,7 @@ footer {
     background: url("../img/hero-bg.png");
     width: 100%; }
 
-/*generales de formularios*/
+/*Forms Styles*/
 form input[type="text"],
 form input[type="email"],
 form textarea {
