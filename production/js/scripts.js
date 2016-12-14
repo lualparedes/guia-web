@@ -41,7 +41,7 @@ $('.nav-trigger').click(function(){
 });
 
 /*---- Search ----*/
-$('.search').click(function(){
+$('.search').click(function(){ // open search box
 	// calculate available space and put proper bg
 	if (window.matchMedia('(min-width: 840px)').matches) {
 		var avaHeaderSpace = $('header').width() - 149;
@@ -49,13 +49,19 @@ $('.search').click(function(){
 	} else {
 		var avaHeaderSpace = $('header').width() - 197;
 	}
+	// hide mask
+	$('.search-mask').css('display','none');
+	// focus on input
+	$('#search-box').focus();
 	// define width
 	$(this).css('width',avaHeaderSpace+'px');
 });
-$(document).click(function(event) { 
+$(document).click(function(event) { // close search box
     if(!$(event.target).closest('.search').length) {
         $('.search').css('width','');
         $('.search .in').css('background','');
+        // show mask
+        $('.search-mask').css('display','');
     }        
 })
 
