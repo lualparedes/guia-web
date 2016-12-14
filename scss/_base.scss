@@ -31,4 +31,10 @@ $vu: 60px;
     align-items: center;
 }
 
+@mixin flex-box($just: center){
+	display: flex;
+	justify-content: $just;
+	flex-wrap: wrap;
+}
+
 

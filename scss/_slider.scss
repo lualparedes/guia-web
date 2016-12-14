@@ -28,10 +28,10 @@
 
 	.slider-controls{
 		width: 100%;
-		position: absolute;
-		bottom: 0px;
+		//bottom: -20px;
 		text-align: center;
 		z-index: 2;
+		margin-bottom: 20px;
 
 		li{
 			display: inline-block;

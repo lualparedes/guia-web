@@ -6,23 +6,15 @@
 	flex-wrap: wrap;
 }
 
-.contact-form{
-	input{
-		width: 100%;
-	}
-
-	textarea{
-		resize: none;
-		overflow: scroll;
-	}
-}
-
 .info-contact{
-	width: 40%;
+	width: 60%;
 	min-width: 415px;
+	margin-left: 10px;
 
 	p{
 		padding: 25px;
+		margin-left: 10px;
+		min-width: 130px;
 	}
 
 	span{

@@ -1,25 +1,4 @@
 @charset "UTF-8";
-/*
-Error: Inconsistent indentation: 1 tab was used for indentation, but the rest of the document was indented using 2 spaces.
-        on line 143 of css/styles.css
-
-138: /*
-139: 
-140: .no-trans (no transition)
-141: 
-142: .label (categoria)
-143: 	grad1
-144: 
-145: *\/
-146: .no-trans {
-147:   transition: all 0s; }
-148: 
-
-Backtrace:
-css/styles.css:143
-/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/engine.rb:486:in `block in tabulate'
-/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/engine.rb:444:in `each'
-/var/lib/gems/2.3.0/gems/sass-3.4.22/lib/sass/engine.rb:444:in `each_with_index'
 /***** H1 TITLE *****/
 /*==== H2 Title ====*/
 /*---- H3 Title ----*/
@@ -671,10 +650,9 @@ barebones
         background: rgba(11, 23, 40, 0.5); }
   .slider-container .slider-controls {
     width: 100%;
-    position: absolute;
-    bottom: 0px;
     text-align: center;
-    z-index: 2; }
+    z-index: 2;
+    margin-bottom: 20px; }
     .slider-container .slider-controls li {
       display: inline-block;
       border-radius: 50%;
@@ -735,17 +713,14 @@ barebones
   padding: 50px 0;
   flex-wrap: wrap; }
 
-.contact-form input {
-  width: 100%; }
-.contact-form textarea {
-  resize: none;
-  overflow: scroll; }
-
 .info-contact {
-  width: 40%;
-  min-width: 415px; }
+  width: 60%;
+  min-width: 415px;
+  margin-left: 10px; }
   .info-contact p {
-    padding: 25px; }
+    padding: 25px;
+    margin-left: 10px;
+    min-width: 130px; }
   .info-contact span {
     margin-right: 10px;
     font-size: 16px; }
@@ -770,5 +745,29 @@ footer {
         margin-right: 10px; }
     footer .footer-description .credits {
       font-size: .7rem; }
+
+.flex-box {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap; }
+  .flex-box section {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; }
+  .flex-box article {
+    background: url("../img/hero-bg.png");
+    width: 100%; }
+
+/*generales de formularios*/
+form input[type="text"],
+form input[type="email"],
+form textarea {
+  margin-bottom: 20px;
+  width: 100%; }
+form textarea {
+  resize: none;
+  overflow: scroll; }
+form input[type="submit"] {
+  margin: 0 auto; }
 
 /*# sourceMappingURL=styles.css.map */

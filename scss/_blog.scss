@@ -1,0 +1,32 @@
+.flex-box{
+	@include flex-box(space-around);
+
+	section{
+		@include flex-box();
+	}
+
+	article{
+		background: url('../img/hero-bg.png');
+		width: 100%;
+	}
+}
+
+/*generales de formularios*/
+
+form{
+	input[type="text"],
+	input[type="email"],
+	textarea{
+		margin-bottom: 20px;
+		width: 100%;
+	}
+
+	textarea{
+		resize: none;
+		overflow: scroll;
+	}
+
+	input[type="submit"]{
+		margin: 0 auto;
+	}
+}
