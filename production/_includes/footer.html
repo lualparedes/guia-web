@@ -104,9 +104,10 @@
 	function fieldValidation(field) {
 
 		var str = $('#' + field).val();
-		var i = (str == 'name' ? 0 : str == 'email' ? 1 : 2);
+		var i = (field == 'name' ? 0 : field == 'email' ? 1 : 2);
+		var regex = /[A-Z0-9._%+-]+@[A-Z0-9.-]+[.][A-Z]{2,4}/igm; // for email val
 		
-		if (str == '') {
+		if ((str == '') || ( i == 1 && !regex.test(str) )) {
 			fieldFeedback(false,field);
 			validation[i] = 0;
 		} else {
@@ -115,8 +116,6 @@
 		}
 
 	}
-
-
 
 
 	/*---- Events ----*/
