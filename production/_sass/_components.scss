@@ -14,9 +14,14 @@ jumbotron
 
 card
 	card-news
+	card-result
 	card-subs
 
 card-bg
+
+msg
+	ok
+	err
 
 wrap
 
@@ -108,13 +113,24 @@ header {
 			background: $subtle;
 			border: 0;
 			display: inline-block;
-			padding-right: 40px;
+			padding-right: 42px;
 		}
 		.icon-search {
 			position: absolute;
-			top: 12px;
-			right: 12px;
+			top: 6px;
+			right: 6px;
 			font-size: 1.1rem;
+			background: transparent;
+			border: 0;
+			padding: .3rem;
+		}
+		.search-mask {
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 48px;
+			height: 48px;
+			background: transparent;
 		}
 	}
 	
@@ -198,7 +214,9 @@ header {
 .card {
 	background: #fff;
 	overflow: hidden;
+	border-radius: 3px;
 	height: 240px;
+	border: 1px solid rgba($text_c,.12);
 	border-bottom: 1px solid rgba($text_c,.3);
 }
 
@@ -252,6 +270,10 @@ header {
 		background-size: cover;
 		width: 40%;
 	}
+}
+
+.card-result {
+	padding: .5rem 0;
 }
 
 .card-subs {
@@ -321,6 +343,23 @@ header {
 			}
 		}	
 	}	
+}
+
+.msg {
+	background: $subtle;
+	padding: 2rem;
+	border-radius: 3px;
+	width: 100%;
+}
+.ok {
+	color: $ok1;
+	border: 1px solid $ok1;
+	background: $ok2;
+}
+.err {
+	color: $err1;
+	border: 1px solid $err1;
+	background: $err2;
 }
 
 .wrap {
@@ -498,6 +537,16 @@ footer {
 		}
 		.nav-trigger {
 			display: none;
+		}
+	}
+
+	.card-result {
+		width: 50%;
+		&:nth-child(odd) {
+			padding-right: .5rem
+		}
+		&:nth-child(even) {
+			padding-left: .5rem
 		}
 	}
 

@@ -11,7 +11,7 @@
 		{% include style_calendario.html %}
 	{% elsif page.id == 'contacto' %}
 		{% include style_contacto.html %}
-	{% elsif page.class == 'resultados' %}
+	{% elsif page.id == 'resultados' %}
 		{% include style_resultados.html %}
 	{% elsif page.class == 'post' %}
 		{% include style_post.html %}
@@ -110,10 +110,11 @@
 				{% endif %}
 			</ul>
 		</nav>
-		<div class="search">
-			<input type="text" class="in">
-			<span class="icon-search"></span>
-		</div>
+		<form class="search" action="/resultados" method="get">
+			<input type="text" class="in" id="search-box" name="query">
+			<input type="submit" value="&#59653;" class="icon-search">
+			<span class="search-mask"></span>
+		</form>
 		<div class="nav-trigger">
 			<span></span>
 			<span></span>

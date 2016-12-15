@@ -1,0 +1,243 @@
+[33mcommit 5905add3f5aec5b7e9cfc14ef18fdaea2ed623f9[m
+Author: Lual <lualps94@gmail.com>
+Date:   Tue Dec 13 18:02:09 2016 -0400
+
+    page calendario (coming soon) deployed with Jekyll
+
+[33mcommit 761129c11bdbfa3dd6351ea5f22e51ab27f4d516[m
+Author: Lual <lualps94@gmail.com>
+Date:   Tue Dec 13 17:44:48 2016 -0400
+
+    post template deployed
+
+[33mcommit 73d811d29074a4f892f08254e4e54100ec434923[m
+Author: José Daniel <devsoftwarecode@gmail.com>
+Date:   Tue Dec 13 09:45:48 2016 -0400
+
+    Contacto page icons
+
+[33mcommit d1984868091409a4a8b22dce9875d12a3bec4246[m
+Author: José Daniel <devsoftwarecode@gmail.com>
+Date:   Tue Dec 13 09:45:23 2016 -0400
+
+    Contacto page icons
+
+[33mcommit aaf9bcd540ecfe0683a6bc6a02c3d2df987d96d2[m
+Merge: f22670b 3cbd8ce
+Author: José Daniel <devsoftwarecode@gmail.com>
+Date:   Tue Dec 13 09:27:00 2016 -0400
+
+    Merge remote-tracking branch 'refs/remotes/origin/master'
+
+[33mcommit f22670b8277e944420aab8fe4fa837e4323b7592[m
+Author: José Daniel <devsoftwarecode@gmail.com>
+Date:   Tue Dec 13 09:26:13 2016 -0400
+
+    Contacto page responsive
+
+[33mcommit 3cbd8ce9afc1032d8d253871944fa97cf2ae20ab[m
+Author: Lual <lualps94@gmail.com>
+Date:   Tue Dec 13 01:06:23 2016 -0400
+
+    frontend of page contacto deployed with Jekyll
+
+[33mcommit a90b7ba94c50d6c9c2df6c68354066ca6bcbfa0d[m
+Merge: 44a3d28 6893076
+Author: Lual <lualps94@gmail.com>
+Date:   Tue Dec 13 00:10:55 2016 -0400
+
+    Merge branch 'master' of https://github.com/lualparedes/guia-web
+
+[33mcommit 44a3d28571c8f86d45575802efe4dd5de9e2f7fd[m
+Author: Lual <lualps94@gmail.com>
+Date:   Tue Dec 13 00:10:28 2016 -0400
+
+    updated documentation
+
+[33mcommit 68930765029f06aafe15ea2438cbe8d0d23e507c[m
+Author: José Daniel <devsoftwarecode@gmail.com>
+Date:   Mon Dec 12 23:58:09 2016 -0400
+
+    contacto styles
+
+[33mcommit 277f2cc339a0af679922b3d3ca76f688e8afd626[m
+Author: José Daniel <devsoftwarecode@gmail.com>
+Date:   Mon Dec 12 23:24:36 2016 -0400
+
+    only html of contacto page
+
+[33mcommit 2c4529e389ec505ab45253b4823ac380c6f56a9a[m
+Author: José Daniel <devsoftwarecode@gmail.com>
+Date:   Mon Dec 12 23:07:53 2016 -0400
+
+    adding footer to html
+
+[33mcommit ec6b87937400d500a21fce5cebc01967f9bc4d0e[m
+Merge: 2fbb389 8169e6e
+Author: Lual <lualps94@gmail.com>
+Date:   Mon Dec 12 21:06:10 2016 -0400
+
+    Merge branch 'master' of https://github.com/lualparedes/guia-web
+
+[33mcommit 2fbb38980b3a80de77fd7f54525fdf0d3d2ecc47[m
+Author: Lual <lualps94@gmail.com>
+Date:   Mon Dec 12 21:04:10 2016 -0400
+
+    documentation updated, nosotros deployed with Jekyll
+
+[33mcommit 8169e6ed021c27f91ea18460e5e99a61cf0bfc82[m
+Author: José Daniel <devsoftwarecode@gmail.com>
+Date:   Mon Dec 12 01:14:17 2016 -0400
+
+    Update styles for slideshow
+
+[33mcommit 834be6a4f05042b7e35174c5b823fb99e754390b[m
+Author: José Daniel <devsoftwarecode@gmail.com>
+Date:   Mon Dec 12 01:02:34 2016 -0400
+
+    slider.js finished
+
+[33mcommit 761f8b23fda0be695ea7a2ca398c7d003474afdf[m
+Merge: 159a9e0 128bda2
+Author: José Daniel <devsoftwarecode@gmail.com>
+Date:   Mon Dec 12 00:58:39 2016 -0400
+
+    scss of slide deployed
+
+[33mcommit 159a9e0fbf7ecff4b8248cbeed05a2012037af13[m
+Author: José Daniel <devsoftwarecode@gmail.com>
+Date:   Mon Dec 12 00:45:26 2016 -0400
+
+    script slideshow and css styles for animation
+
+[33mcommit 128bda2117a455589ba17bd373c801b47b2e8afa[m
+Author: Lual <lualps94@gmail.com>
+Date:   Sun Dec 11 22:47:58 2016 -0400
+
+    home deployed with Jekyll
+
+[33mcommit 312432674ea368dbb90bf2669d6deb453caa6b60[m
+Author: Lual <lualps94@gmail.com>
+Date:   Sat Dec 10 22:48:20 2016 -0400
+
+    initial Jekyll files deployed
+
+[33mcommit 84f3c04cdc8230b4fd98c0c8c714c5187f55aa61[m
+Author: Lual <lualps94@gmail.com>
+Date:   Sat Dec 10 15:50:06 2016 -0400
+
+    foo retouch
+
+[33mcommit 5a51d8a8e92b9e3eb8df4c01b09beac058a9d840[m
+Author: José Daniel <devsoftwarecode@gmail.com>
+Date:   Sat Dec 10 13:07:28 2016 -0400
+
+    Footer deployed
+
+[33mcommit f4d50c0789461055ef005fb3b79041f04c75c5e3[m
+Author: Lual <lualps94@gmail.com>
+Date:   Fri Dec 9 23:16:17 2016 -0400
+
+    added svg logo in index.html
+
+[33mcommit 76c20cc33d31b2ae2ff4c3097da0b9ff79d33a8f[m
+Author: Lual <lualps94@gmail.com>
+Date:   Fri Dec 9 23:08:41 2016 -0400
+
+    frontend lib done
+
+[33mcommit 85c57d5b2b9508595e193a81cab60a937a6e5a3d[m
+Author: Lual <lualps94@gmail.com>
+Date:   Fri Dec 9 21:38:02 2016 -0400
+
+    heade and nav done
+
+[33mcommit 82e7d4c5d8f9892dbccc39fcefa02ffcb1003c1a[m
+Author: José Daniel <devsoftwarecode@gmail.com>
+Date:   Fri Dec 9 09:34:00 2016 -0400
+
+    Add slider styles to components.scss
+
+[33mcommit 9850acf96c6259a7d5e418eb3c444f2cad5d23fd[m
+Author: José Daniel <devsoftwarecode@gmail.com>
+Date:   Fri Dec 9 09:10:10 2016 -0400
+
+    Slider function deployed
+
+[33mcommit 664ddbedad938d5b2afe1fc755ec720b29d7ea9d[m
+Author: Lual <lualps94@gmail.com>
+Date:   Thu Dec 8 23:20:28 2016 -0400
+
+    most of the frontend lib done
+
+[33mcommit fd542fc1f41223850e5d52a564249f0aa04e81e4[m
+Author: Lual <lualps94@gmail.com>
+Date:   Wed Dec 7 22:51:43 2016 -0400
+
+    boilerplate deployed
+
+[33mcommit e3145968e64ca927a201a8c4cfbc647f688dfe30[m
+Author: Luis Paredes <lualparedes@users.noreply.github.com>
+Date:   Sat Sep 24 20:03:42 2016 -0400
+
+    Update README.md
+
+[33mcommit 143d71798fa2ad591d75799238eb21de8f1b5e01[m
+Author: Luis Paredes <lualparedes@users.noreply.github.com>
+Date:   Sat Sep 24 20:02:31 2016 -0400
+
+    Update README.md
+
+[33mcommit c27e3679189d739a0cf25baba040b01eeb00cb7a[m
+Author: Luis Paredes <lualparedes@users.noreply.github.com>
+Date:   Sat Sep 24 20:01:23 2016 -0400
+
+    Update README.md
+
+[33mcommit 3b5b3725c2986b9d90692865468ec70f63c3edad[m
+Author: Luis Paredes <lualparedes@users.noreply.github.com>
+Date:   Sat Sep 24 19:58:32 2016 -0400
+
+    Update README.md
+
+[33mcommit 24e66307dc8b453bbec71d1d382e330b7c404515[m
+Author: Luis Paredes <lualparedes@users.noreply.github.com>
+Date:   Sat Sep 24 19:52:28 2016 -0400
+
+    Update README.md
+
+[33mcommit 286f78f8cfafb60fbeaad894f6f7c0e36306046b[m
+Author: Luis Paredes <lualparedes@users.noreply.github.com>
+Date:   Sat Sep 24 19:47:52 2016 -0400
+
+    Update README.md
+
+[33mcommit 7322c97b7eb0e9e9680cceee3214801168b256ec[m
+Author: Luis Paredes <lualparedes@users.noreply.github.com>
+Date:   Sat Sep 24 19:46:15 2016 -0400
+
+    Update README.md
+
+[33mcommit 434e0ba22c9ae8b7ebc7a72c2aae9e8c163653c0[m
+Author: Luis Paredes <lualparedes@users.noreply.github.com>
+Date:   Sun Sep 18 02:10:38 2016 -0400
+
+    Create README.md
+
+[33mcommit 0bcb0498f1116382a105d8c5bd48d54cfa7dfddf[m
+Author: Luis Paredes <lualps94@gmail.com>
+Date:   Sun Sep 18 02:01:18 2016 -0400
+
+    cleaning test
+
+[33mcommit 6a1f6bb675e808e07b5e05b1bb9363ce38ad9dbf[m
+Author: Luis Paredes <lualps94@gmail.com>
+Date:   Sun Sep 18 01:59:28 2016 -0400
+
+    test commit
+
+[33mcommit 1bbe4ef621cbac9cce5149738e0d4e0df69b1ea0[m
+Author: Luis Paredes <lualparedes@users.noreply.github.com>
+Date:   Sun Sep 18 01:47:22 2016 -0400
+
+    Initial commit
