@@ -628,7 +628,9 @@ barebones
 
 .slider-container {
   width: 100%;
-  position: relative; }
+  position: relative;
+  height: 90vh;
+  min-height: 480px; }
   .slider-container .slider-arrows ul {
     list-style: none;
     position: absolute;
@@ -643,46 +645,44 @@ barebones
     .slider-container .slider-arrows ul li {
       padding: 0 15px;
       background: rgba(242, 242, 242, 0.5);
-      border-radius: 50%; }
+      border-radius: 50%;
+      position: relative; }
       .slider-container .slider-arrows ul li:hover {
         cursor: pointer;
         color: #f2f2f2;
         background: rgba(11, 23, 40, 0.5); }
-  .slider-container .slider-controls {
-    width: 100%;
-    text-align: center;
-    z-index: 2;
-    margin-bottom: 20px; }
-    .slider-container .slider-controls li {
-      display: inline-block;
-      border-radius: 50%;
-      margin: 0 4px;
-      width: 12px;
-      height: 12px;
-      cursor: pointer;
-      background: #0b1728; }
-      .slider-container .slider-controls li.active {
-        background: blue; }
+  .slider-container .index {
+    position: absolute;
+    bottom: 5px;
+    right: 20px; }
 
 .slider-wrapper {
   overflow: hidden;
   position: relative;
-  height: 400px;
+  height: 100%;
   width: 100%; }
   .slider-wrapper li {
-    display: none; }
+    display: none;
+    position: relative;
+    height: 100%; }
     .slider-wrapper li.slide-current {
       display: block;
-      position: relative; }
-      .slider-wrapper li.slide-current h1 {
-        position: absolute;
-        top: 300px; }
+      position: relative;
+      background: url(http://lorempixel.com/900/600);
+      background-size: cover;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center; }
+    .slider-wrapper li .jumbotron {
+      z-index: 2; }
     .slider-wrapper li img {
+      display: none;
       position: absolute;
       top: 0;
       z-index: -1;
-      max-width: 100%;
-      height: auto; }
+      height: 100%; }
+    .slider-wrapper li .wrap {
+      margin: 0; }
   .slider-wrapper .fade {
     -webkit-animation-name: fade;
     -webkit-animation-duration: 2s;

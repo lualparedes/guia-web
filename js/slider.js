@@ -4,9 +4,9 @@
 
 	/*<<<<<<<<<<<<<<<<<<< Globals >>>>>>>>>>>>>>>>>>>*/
 
-	var panelActual, panelSiguiente,
-		sliderInterval, indActual = 0, indSiguiente = 1,
-		controlesLi, sliderLength, flechas;
+	var currentPanel, nextPanel,
+		sliderInterval, currentIndex = 0, nextIndex = 1,
+		sliderLength, arrows, Index;
 	
 	
 
@@ -21,29 +21,16 @@
 
 		pb.slider = document.getElementById("slider");//slider es un elemento ul
 
-		pb.paneles = slider.getElementsByTagName('li');
-		pb.flechas = document.getElementById('slider-arrows');
-		pb.controles = document.getElementById('slider-controls');
+		pb.panels = slider.getElementsByTagName('li');
+		pb.arrows = document.getElementById('slider-arrows');
+		pb.Index = document.getElementById('index');
 
 		/*<<<<<<<<<<<<<<<<<<<<<<<<<< VARIABLES >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
-
-		controlesLi = pb.controles;
-		flechas = pb.flechas.getElementsByTagName('li');
-		sliderLength = pb.paneles.length;
+		arrows = pb.arrows.getElementsByTagName('li');
+		sliderLength = pb.panels.length;
+		Index = pb.Index;
 
 		/*<<<<<<<<<<<<<<<<<<<<<<<<<<<<< END >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
-
-
-		//Creamos los controles
-		var liElem;
-
-		for (var i = 0; i < sliderLength; i++){
-			liElem = document.createElement('li');
-			controlesLi.appendChild(liElem);
-		}
-
-		//Activamos el primer li
-		controlesLi.getElementsByTagName('li')[0].classList.add('active');
 
 
 		/*<<<<<<<<<<<<<<<<<<<<<< FUNCIONES y MÉTODOS >>>>>>>>>>>>>>>>>>>>>>>>*/
@@ -51,6 +38,7 @@
 		pb.init = function (settings){
 
 			this.settings = settings || {duration: 6000};
+			Index.innerHTML = "1/3";
 
 			/* Esta función incializa el slider */
 
@@ -58,98 +46,63 @@
 
 			//Eventos de transición manual
 
-
-			/*>>>>>>> Usando los controles <<<<<<<<<*/
-
-			for (i = 0; i < sliderLength; i++){
-				controlesLi.getElementsByTagName('li')[i].addEventListener("click",function(e){
-
-					clearInterval(sliderInterval);
-
-					for (var j = 0; j < sliderLength; j++){
-						controlesLi.getElementsByTagName('li')[indActual].classList.remove("active");
-						pb.paneles[indActual].classList.remove("slide-current");
-						pb.paneles[indActual].classList.remove("fade");
-					}
-
-					//Hayamos el índice del li actual
-
-					this.classList.add("active");
-
-					for (j = 0; j < sliderLength; j++){
-
-						if (controlesLi.getElementsByTagName('li')[j].classList != ""){
-							indActual = j;
-						}
-					}
-
-					pb.paneles[indActual].classList.add("slide-current");
-					pb.paneles[indActual].classList.add("fade");
-
-					indSiguiente = indActual + 1;
-
-					SliderInit();
-				});
-			}
+			console.log(Index);
 
 
-			/*>>>>>>>>>> Usando las flechas <<<<<<<<<<<*/
-			flechas[0].addEventListener("click", function (e){
+			/*>>>>>>>>>> Usando las arrows <<<<<<<<<<<*/
+			arrows[0].addEventListener("click", function (e){
 
 				clearInterval(sliderInterval);
 
 				for (var j = 0; j < sliderLength; j++){
-					controlesLi.getElementsByTagName('li')[indActual].classList.remove("active");
-					pb.paneles[indActual].classList.remove("slide-current");
-					pb.paneles[indActual].classList.remove("fade");
+					pb.panels[currentIndex].classList.remove("slide-current");
+					pb.panels[currentIndex].classList.remove("fade");
 				}
 
-				indActual--;
-				indSiguiente--;
+				currentIndex--;
+				nextIndex--;
 
-				if (indActual == -1){
-					indActual = sliderLength - 1;
-					indSiguiente = 0;
-				}else if (indSiguiente == -1){
-					indSiguiente = 2;
-					indActual = 1;
+				if (currentIndex == -1){
+					currentIndex = sliderLength - 1;
+					nextIndex = 0;
+				}else if (nextIndex == -1){
+					nextIndex = 2;
+					currentIndex = 1;
 				}
 
 
-				controlesLi.getElementsByTagName('li')[indActual].classList.add("active");
-				pb.paneles[indActual].classList.add("slide-current");
-				pb.paneles[indActual].classList.add("fade");
+				pb.panels[currentIndex].classList.add("slide-current");
+				pb.panels[currentIndex].classList.add("fade");
+				Index.innerHTML = (currentIndex+1) +"/"+(sliderLength);
 
 				SliderInit();
 
 			});
 
-			flechas[1].addEventListener("click", function (e){
+			arrows[1].addEventListener("click", function (e){
 
 				clearInterval(sliderInterval);
 
 				for (var j = 0; j < sliderLength; j++){
-					controlesLi.getElementsByTagName('li')[indActual].classList.remove("active");
-					pb.paneles[indActual].classList.remove("slide-current");
-					pb.paneles[indActual].classList.remove("fade");
+					pb.panels[currentIndex].classList.remove("slide-current");
+					pb.panels[currentIndex].classList.remove("fade");
 				}
 
-				indActual++;
-				indSiguiente++;
+				currentIndex++;
+				nextIndex++;
 
-				if (indActual == 3){
-					indActual = 0;
-					indSiguiente = indActual + 1;
+				if (currentIndex == 3){
+					currentIndex = 0;
+					nextIndex = currentIndex + 1;
 					
-				}else if (indSiguiente == 3){
-					indSiguiente = 0;
-					indActual = sliderLength - 1;
+				}else if (nextIndex == 3){
+					nextIndex = 0;
+					currentIndex = sliderLength - 1;
 				}
 
-
-				controlesLi.getElementsByTagName('li')[indActual].classList.add("active");
-				pb.paneles[indActual].classList.add("slide-current");
-				pb.paneles[indActual].classList.add("fade");
+				pb.panels[currentIndex].classList.add("slide-current");
+				pb.panels[currentIndex].classList.add("fade");
+				Index.innerHTML = (currentIndex+1) +"/"+(sliderLength);
 
 				SliderInit();
 
@@ -165,28 +118,25 @@
 
 		pb.slide = function (){
 
-			if (indSiguiente == sliderLength){
-				indSiguiente = 0;
-				indActual = sliderLength - 1;
+			if (nextIndex == sliderLength){
+				nextIndex = 0;
+				currentIndex = sliderLength - 1;
+				Index.innerHTML = 0;
 			}
 
-			console.log(indActual);
-			console.log(indSiguiente);
-
-
-			panelActual = pb.paneles[indActual];
-			panelSiguiente = pb.paneles[indSiguiente];
+			currentPanel = pb.panels[currentIndex];
+			nextPanel = pb.panels[nextIndex];
 			
-			panelSiguiente.classList.add("slide-current");
-			panelSiguiente.classList.add("fade");
-			panelActual.classList.remove("slide-current");		
-			panelActual.classList.remove("fade");	
+			nextPanel.classList.add("slide-current");
+			nextPanel.classList.add("fade");
+			currentPanel.classList.remove("slide-current");		
+			currentPanel.classList.remove("fade");
+			Index.innerHTML = (parseInt(Index.innerHTML)+1 )+"/"+sliderLength;
 
-			controlesLi.getElementsByTagName('li')[indActual].classList.remove("active");
-			controlesLi.getElementsByTagName('li')[indSiguiente].classList.add("active");
 
-			indActual = indSiguiente;
-			indSiguiente++;
+			currentIndex = nextIndex;
+			nextIndex++;
+			
 		};
 
 		return pb;
