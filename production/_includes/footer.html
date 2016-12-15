@@ -51,6 +51,88 @@
 <!-- Scripts -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="/js/scripts.js"></script>
+{% if page.id == 'contacto' %}
+<script>
+	
+	/*==== Live validation ====*/
+
+	/*---- Globals ----*/
+
+	var validation = [0,0,0]; // array of booleans, each item corresponds to a field in the form
+
+
+	/*---- Functions ----*/
+
+	function fieldFeedback(valid,field) {
+
+		// variables
+		var fieldEl = '#' + field;
+		var fieldMsgEl = '#' + field + '-msg';
+		var errMsg;
+		if (field == 'name') { // set proper error message
+			errMsg = '¿Cómo te llamas?';
+		} else if (field == 'email') {
+			errMsg = 'Introduce una dirección de correo válida';
+		} else {
+			errMsg = 'Escribe tu mensaje';
+		}
+		
+		if (valid) { // feedback for ok
+
+			// border botton turns green
+			$(fieldEl).css('border-bottom','2px solid #2e9e46');
+			// message is hidden (if there was any)
+			if ($(fieldMsgEl).length) {
+				$(fieldMsgEl).slideUp();
+			}
+			
+		} else { // feedback for err
+
+			$(fieldEl).css('border-bottom','2px solid #ca4848');
+			// message is displayed below (slide down)
+			if ($(fieldMsgEl).length < 1) {
+				$(fieldEl).after('<span class="no-trans" id="' + field + '-msg">' + errMsg +'</span>');
+				$(fieldMsgEl).slideDown();
+			} else {
+				$(fieldMsgEl).slideDown();
+			}
+
+		}
+
+	}
+
+	function fieldValidation(field) {
+
+		var str = $('#' + field).val();
+		var i = (str == 'name' ? 0 : str == 'email' ? 1 : 2);
+		
+		if (str == '') {
+			fieldFeedback(false,field);
+			validation[i] = 0;
+		} else {
+			fieldFeedback(true,field);
+			validation[i] = 1;
+		}
+
+	}
+
+
+
+
+	/*---- Events ----*/
+
+	// on focus out
+	$('.contact-form .in').focusout(function(){
+		fieldValidation($(this).attr('id'));
+	});
+
+
+	/*==== Ajax request ====*/
+
+	// on submit
+
+</script>
+{% endif %}
 {% if page.comments %}
 	<script>
 	/**
