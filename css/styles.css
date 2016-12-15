@@ -643,7 +643,8 @@ barebones
     padding: 0 10px;
     width: 100%; }
     .slider-container .slider-arrows ul li {
-      padding: 0 15px;
+      color: #0b1728;
+      padding: 6px 6px 0;
       background: rgba(242, 242, 242, 0.5);
       border-radius: 50%;
       position: relative; }
