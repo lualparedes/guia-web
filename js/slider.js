@@ -1,4 +1,4 @@
-(function(){
+$(function(){
 	// Slideshow function
 
 
@@ -15,21 +15,15 @@
 
 		var pb = {};
 
-		/*
-			Traemos el slider del ul contenedor de los elementos del slider
-		*/
-
-		pb.slider = document.getElementById("slider");//slider es un elemento ul
-
-		pb.panels = slider.getElementsByTagName('li');
-		pb.arrows = document.getElementById('slider-arrows');
-		pb.Index = document.getElementById('index');
+		pb.slider = $("#slider");
+		pb.panels = $('#slider li');
+		pb.arrows = $('#slider-arrows');
+		pb.Index = $('#index');
 
 		/*<<<<<<<<<<<<<<<<<<<<<<<<<< VARIABLES >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
-		arrows = pb.arrows.getElementsByTagName('li');
+		arrows = $('#slider-arrows li');
 		sliderLength = pb.panels.length;
 		Index = pb.Index;
-
 		/*<<<<<<<<<<<<<<<<<<<<<<<<<<<<< END >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
 
 
@@ -38,25 +32,49 @@
 		pb.init = function (settings){
 
 			this.settings = settings || {duration: 6000};
-			Index.innerHTML = "1/3";
-
-			/* Esta función incializa el slider */
-
-			SliderInit()//Activamos el intervalo de transición			
-
-			//Eventos de transición manual
-
-			console.log(Index);
+			Index.text("1/3");
 
 
-			/*>>>>>>>>>> Usando las arrows <<<<<<<<<<<*/
+			/* Initialize slider */
+
+			SliderInit()			
+
+			//Manual transition events
+
+
+			/*>>>>>>>>>>>>>>>>>>>> SWIPE <<<<<<<<<<<<<<<<<<<<<*/
+			// $(document).on("pagecreate","#slider",function(){
+
+			//     $("#slider").on("swipeleft",function(e){
+					
+			//     	alert("swipeLeft");
+
+
+			// 	});
+
+
+			// 	("#slider").on("swiperight",function(e){
+
+
+			// 		alert("swipeRight");
+
+
+			// 	});
+
+			// });
+
+
+
+			/*>>>>>>>>>>>>>>>>>>>> ARROWS <<<<<<<<<<<<<<<<<*/
 			arrows[0].addEventListener("click", function (e){
 
 				clearInterval(sliderInterval);
 
+				currentPanel = pb.panels[currentIndex];
+
 				for (var j = 0; j < sliderLength; j++){
-					pb.panels[currentIndex].classList.remove("slide-current");
-					pb.panels[currentIndex].classList.remove("fade");
+					currentPanel.classList.remove("slide-current");
+					currentPanel.classList.remove("fade");
 				}
 
 				currentIndex--;
@@ -70,10 +88,11 @@
 					currentIndex = 1;
 				}
 
+				currentPanel = pb.panels[currentIndex];
 
-				pb.panels[currentIndex].classList.add("slide-current");
-				pb.panels[currentIndex].classList.add("fade");
-				Index.innerHTML = (currentIndex+1) +"/"+(sliderLength);
+				currentPanel.classList.add("slide-current");
+				currentPanel.classList.add("fade");
+				Index.text((currentIndex+1)+"/"+sliderLength);
 
 				SliderInit();
 
@@ -83,9 +102,11 @@
 
 				clearInterval(sliderInterval);
 
+				currentPanel = pb.panels[currentIndex];
+
 				for (var j = 0; j < sliderLength; j++){
-					pb.panels[currentIndex].classList.remove("slide-current");
-					pb.panels[currentIndex].classList.remove("fade");
+					currentPanel.classList.remove("slide-current");
+					currentPanel.classList.remove("fade");
 				}
 
 				currentIndex++;
@@ -100,9 +121,11 @@
 					currentIndex = sliderLength - 1;
 				}
 
-				pb.panels[currentIndex].classList.add("slide-current");
-				pb.panels[currentIndex].classList.add("fade");
-				Index.innerHTML = (currentIndex+1) +"/"+(sliderLength);
+				currentPanel = pb.panels[currentIndex];
+
+				currentPanel.classList.add("slide-current");
+				currentPanel.classList.add("fade");
+				Index.text((currentIndex+1)+"/"+sliderLength);
 
 				SliderInit();
 
@@ -121,7 +144,7 @@
 			if (nextIndex == sliderLength){
 				nextIndex = 0;
 				currentIndex = sliderLength - 1;
-				Index.innerHTML = 0;
+				Index.text(0);
 			}
 
 			currentPanel = pb.panels[currentIndex];
@@ -131,7 +154,8 @@
 			nextPanel.classList.add("fade");
 			currentPanel.classList.remove("slide-current");		
 			currentPanel.classList.remove("fade");
-			Index.innerHTML = (parseInt(Index.innerHTML)+1 )+"/"+sliderLength;
+			Index.text((nextIndex+1)+"/"+sliderLength);
+
 
 
 			currentIndex = nextIndex;
@@ -148,4 +172,4 @@
 
 	sliderModule.init({duration: 4000});
 
-}());
+});

@@ -1,15 +1,27 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<head>	
 	<meta charset="UTF-8">
 	<link rel="icon" href="img/favicon.png">
 	<title>Sirius</title>
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
 	<meta name="description" content="">
+
+	<!-- Include meta tag to ensure proper rendering and touch zooming -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+	<!-- Include the jQuery library  -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<!-- Include jQuery Mobile stylesheets -->
+	<!--<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">-->
+	<!-- Include the jQuery Mobile library -->
+	<!-- <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> -->
+	
+	<link rel="stylesheet" type="text/css" href="css/swiper.min.css">
+	
+	
 </head>
 <body>
-	
 	<nav class="drawer">
 	<ul>
 		<li><a href="">Inicio</a></li>
@@ -18,10 +30,10 @@
 		<li class="page-current"><a href="">Blog</a></li>
 		<li><a href="">Contacto</a></li>
 	</ul>
-</nav><!--
+</nav>
 
 	
---><div class="content">
+<div class="content">
 
 	<header>
 		<div class="logo">
@@ -66,49 +78,28 @@
 		</div>
 	</header>
 
-
-	<div class="slider-container">
-			<ul id="slider" class="slider-wrapper">
-					<li class="slide-current">
-					<!-- <div class="label">Category</div> -->
+<!-- Swipe Slideshow -->	
+	
+	<div class="swiper-container">
+		
+		<div class="swiper-wrapper">
+			<div class="swiper-slide">
 					<img src="http://lorempixel.com/900/600" alt="">
-					<div class="wrap">
-						<div class="jumbotron">
-							<h1><span>Título de la noticia 1</span></h1>
-						</div>
-					</div>
-				</li>
-				<li>
-					<!-- <div class="label">Category</div> -->
-					<img src="http://lorempixel.com/900/600" alt="">
-					<div class="wrap">
-						<div class="jumbotron">
-							<h1><span>Título de la noticia 2</span></h1>
-						</div>
-					</div>
-				</li>
-				<li>
-					<!-- <div class="label">Category</div> -->
-					<img src="http://lorempixel.com/900/600" alt="">
-					<div class="wrap">
-						<div class="jumbotron">
-							<h1><span>Título de la noticia 3</span></h1>
-						</div>
-					</div>
-				</li>
-			</ul>
-		<div id="slider-arrows" class="slider-arrows">
-			<ul>
-				<li><span class="icon icon-chevron-left"></span></li>
-				<li><span class="icon icon-chevron-right"></span></li>
-			</ul>
+			</div>
+			<div class="swiper-slide">
+					<img src="http://argesit.net/plantillas/nightfree/images/Galeria/Wayne_campus_scienglib_900x600.jpg" alt="">
+			</div>
+			<div class="swiper-slide">
+					<img src="http://vignette4.wikia.nocookie.net/es.gta/images/6/62/AlikGriffin_Santa_Monica_Pier_HDR_s-900x600.PNG/revision/latest?cb=20121127162749" alt="">
+			</div>	
 		</div>
-		<div id="index" class="index"></div>
+		
+		<div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+		
 	</div>
-
-	<!-- <<<<<<<<<<<<<<<<<<<<<<< IMPORTANT >>>>>>>>>>>>>>>>>>>>>>>>>>
-		+ Do responsive slideshow
-	-->
+	
 
 	<div class="content">
 		<div class="wrap">
@@ -139,7 +130,7 @@
 						</div>
 						<div class="card-info">
 							<!-- Begin MailChimp Signup Form -->
-							<!-- <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css"> -->
+							<!-- <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">-->
 							<div id="mc_embed_signup">
 							<form action="//usb.us13.list-manage.com/subscribe/post?u=63f9a5394dce7a2511f623d31&amp;id=4bb0364f09" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
 								    <div id="mc_embed_signup_scroll">
@@ -158,7 +149,7 @@
 									<div id="mce-responses" class="clear">
 										<div class="response" id="mce-error-response" style="display:none"></div>
 										<div class="response" id="mce-success-response" style="display:none"></div>
-									</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+									</div>     <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups -->
 								    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_63f9a5394dce7a2511f623d31_4bb0364f09" tabindex="-1" value=""></div>
 								    <div class="clear"><input type="submit" value="Subscribirme" name="subscribe" id="mc-embedded-subscribe" class="btn btn-fi"></div>
 								    </div>
@@ -218,14 +209,6 @@
 		
 	</div>
 
-
-
-
-
-
-
-
-
 	<footer>
 		<div class="wrap row">
 			<div class="col-md-8 foo-info">
@@ -274,9 +257,10 @@
 	</footer>
 
 	<!-- Scripts -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="js/scripts.js"></script>
-<script src="js/slider.js"></script>
 
+<script src="js/swiper.min.js"></script>
+<script src="js/swiper.js"></script>
+<script src="js/swiper-try-catch.js"></script>
+<script src="js/scripts.js"></script>
 </body>
 </html>
