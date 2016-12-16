@@ -637,6 +637,9 @@ barebones
   height: 90vh;
   min-height: 480px; }
 
+.swipper-wrapper {
+  margin: 0; }
+
 .swiper-slide {
   text-align: center;
   font-size: 18px;
@@ -654,6 +657,13 @@ barebones
   -ms-flex-align: center;
   -webkit-align-items: center;
   align-items: center; }
+  .swiper-slide h1 {
+    z-index: 4;
+    position: absolute;
+    left: 10px;
+    bottom: 50px; }
+  .swiper-slide img {
+    width: 100%; }
 
 .map {
   position: relative;

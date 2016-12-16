@@ -11,6 +11,9 @@
 	min-height: 480px;
 }
 
+.swipper-wrapper{
+	margin: 0;
+}
 
 .swiper-slide {
     text-align: center;
@@ -30,6 +33,17 @@
     -ms-flex-align: center;
     -webkit-align-items: center;
     align-items: center;
+
+    h1{
+	    z-index: 4;
+	    position: absolute;
+	    left: 10px;
+	    bottom: 50px;
+    }
+
+    img{
+    	width:100%;
+    }
 }
 
 
