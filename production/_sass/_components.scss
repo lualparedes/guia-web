@@ -15,9 +15,12 @@ jumbotron
 card
 	card-news
 	card-result
+	card-post-item
 	card-subs
 
 card-bg
+
+insta
 
 msg
 	ok
@@ -272,7 +275,8 @@ header {
 	}
 }
 
-.card-result {
+.card-result,
+.card-post-item {
 	padding: .5rem 0;
 }
 
@@ -345,21 +349,79 @@ header {
 	}	
 }
 
+.insta {
+	margin: 2rem 0;
+	overflow: hidden;
+	ul {
+		background: $text_c;
+		display: flex;
+		height: 240px;	
+		li {
+			position: relative;
+			@include flex();
+			&:hover {
+				button {
+					display: block;
+					opacity: .8;
+				}
+			}
+			button {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%,-50%);
+				z-index: 4;
+				display: none;
+				&:hover {
+					opacity: 1;
+				}
+			}
+		}
+	}
+}
+
 .msg {
 	background: $subtle;
-	padding: 2rem;
+	padding: 2em;
 	border-radius: 3px;
 	width: 100%;
+	position: relative;
+	.close {
+		position: absolute;
+		top: 0;
+		right: 0;
+		@include flex();
+		height: 1.7em;
+		width: 1.7em;
+		cursor: pointer;
+		&:hover {
+			color: #fff;
+		}
+		span {
+			position: relative;
+			bottom: .15em;
+		}
+	}
 }
 .ok {
 	color: $ok1;
 	border: 1px solid $ok1;
 	background: $ok2;
+	.close {
+		&:hover {
+			background: $ok1;
+		}
+	}
 }
 .err {
 	color: $err1;
 	border: 1px solid $err1;
 	background: $err2;
+	.close {
+		&:hover {
+			background: $err1;
+		}
+	}
 }
 
 .wrap {
@@ -540,7 +602,8 @@ footer {
 		}
 	}
 
-	.card-result {
+	.card-result,
+	.card-post-item {
 		width: 50%;
 		&:nth-child(odd) {
 			padding-right: .5rem

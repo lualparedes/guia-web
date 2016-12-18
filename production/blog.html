@@ -1,0 +1,88 @@
+---
+layout: blog
+id: blog
+title: GUIA USB - Blog
+---
+
+<div class="wrap">
+<div class="row">
+		<div class="col-md-6">
+			{% for post in site.posts %}
+				{% if forloop.index == 3 %}
+					{% break %}
+				{% else %}
+					<div class="card card-news {{ post.slug }}">
+						<div class="card-info">
+							<a href="{{ post.url }}"><h2 class="no-trans"><span class="no-trans">{{ post.title }}</span></h2></a>
+							<a href="{{ post.url }}" class="read-more">Leer más...</a>
+						</div>
+						<div class="card-img"></div>
+					</div>
+				{% endif %}
+			{% endfor %}
+		</div>
+		<div class="col-md-6">
+			<div class="card card-subs">
+				<div class="card-img">
+					<h2>
+						<span>Mantente al día con la astronomía</span>
+					</h2>
+				</div>
+				<div class="card-info">
+				<!-- Begin MailChimp Signup Form -->
+				<div id="mc_embed_signup"> 
+					<form action="//usb.us13.list-manage.com/subscribe/post?u=63f9a5394dce7a2511f623d31&amp;id=4bb0364f09" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate=""> 
+						<div id="mc_embed_signup_scroll"> 
+						 <div class="mc-field-group"> 
+							<label for="mce-EMAIL">Correo</label> 
+							<input type="email" value="" name="EMAIL" class="required email in" id="mce-EMAIL" /> 
+						 </div> 
+						 <div id="mce-responses" class="clear"> 
+							<div class="response" id="mce-error-response" style="display:none"></div> 
+							<div class="response" id="mce-success-response" style="display:none"></div> 
+						 </div> 
+						 <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups--> 
+						 <div style="position: absolute; left: -5000px;" aria-hidden="true">
+							<input type="text" name="b_63f9a5394dce7a2511f623d31_4bb0364f09" tabindex="-1" value="" />
+						 </div> 
+						 <div class="clear">
+							<input type="submit" value="Suscríbete" name="subscribe" id="mc-embedded-subscribe" class="button btn btn-fi" />
+						 </div> 
+						</div> 
+					</form> 
+				</div> 
+				<!--End mc_embed_signup-->
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="insta">
+	<ul>
+		<li>
+			<img class="insta-img" src="/img/hero-bg.png"></img>
+			<button class="btn btn-ph-white"><a href="">Ver post</a></button>
+		</li>
+	</ul>
+</div>
+
+<div class="wrap">
+<div class="posts-list">
+	{% for post in site.posts %}
+	{% if forloop.index == 1 or forloop.index == 2 %}
+		{% continue %}
+	{% else %}
+	<div class="card-post-item">
+	<div class="card card-news {{ post.slug }}">
+		<div class="card-info">
+			<a href="{{ post.url }}"><h2 class="no-trans"><span class="no-trans">{{ post.title }}</span></h2></a>
+			<a href="{{ post.url }}" class="read-more">Leer más...</a>
+		</div>
+		<div class="card-img"></div>
+	</div>
+	</div>
+	{% endif %}
+	{% endfor %}
+</div>
+</div>

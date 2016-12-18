@@ -51,6 +51,26 @@
 <!-- Scripts -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="/js/scripts.js"></script>
+{% if page.id == 'blog' %}
+<script>
+
+	// variables
+	var thumb = '';
+	var appendStyles = '';
+
+	// create style rules for each post card
+	{% for post in site.posts %}
+		console.log('post');
+		thumb = "/img/posts/"+"{{ post.date | date: '%Y-%m-%d-' }}"+"{{ post.slug }}"+"-hero.png";
+		appendStyles += '.' + '{{ post.slug }}' + ' .card-img { background: url(' + thumb + ') center; background-size: cover; }'
+
+	{% endfor %}
+
+	// insert required styles
+	$('head style').append(appendStyles);
+
+</script>
+{% endif %}
 {% if page.id == 'contacto' %}
 <script>
 	
@@ -58,7 +78,7 @@
 
 	/*---- Globals ----*/
 
-	var validation = [0,0,0]; // array of booleans, each item corresponds to a field in the form
+	var validation = [1,1,1]; // array of booleans, each item corresponds to a field in the form
 
 
 	/*---- Functions ----*/
@@ -105,7 +125,7 @@
 
 		var str = $('#' + field).val();
 		var i = (field == 'name' ? 0 : field == 'email' ? 1 : 2);
-		var regex = /[A-Z0-9._%+-]+@[A-Z0-9.-]+[.][A-Z]{2,4}/igm; // for email val
+		var regex = /[A-Z0-9._%+-]+@[A-Z0-9.-]+[.]+[A-Z]{2,4}/igm; // for email val
 		
 		if ((str == '') || ( i == 1 && !regex.test(str) )) {
 			fieldFeedback(false,field);
@@ -126,10 +146,43 @@
 	});
 
 
+
 	/*==== Ajax request ====*/
 
 	// on submit
+	$('#contact-form').submit(function(event){
 
+		event.preventDefault();
+
+		if (validation.reduce( (prev, curr) => prev + curr ) == 3) { // all three values are valid
+
+			// send data
+			$.ajax({
+				type: 'POST',
+				url: 'http://lual.com.ve/',
+				data: {
+						subject: 'Nuevo contacto web',
+						to: 'lualps94@gmail.com',
+						name: $('#name').val(),
+						email: $('#email').val(),
+						msg: $('#msg').val()
+					}
+			}).done(function(){
+				$('.msg').html('Mensaje enviado &#59650;' +
+						'<span class=\"close\"><span class=\"no-trans\">x</span></span>');
+				$('.msg').removeClass('err').addClass('ok');
+				$('.msg').slideDown('fast');
+			}).fail(function(){
+				$('.msg').html('No se pudo procesar tu mensaje, por favor intenta de nuevo' +
+						'<span class=\"close\"><span class=\"no-trans\">x</span></span>');
+				$('.msg').removeClass('ok').addClass('err');
+				$('.msg').slideDown('fast');
+			});	
+
+		} else { // gi
+			console.log('invalid');
+		}
+	});
 </script>
 {% endif %}
 {% if page.comments %}

@@ -15,6 +15,13 @@ function scroller(btn) {
 	}, 'slow');
 }
 
+// Close box
+// ON: click 
+function closeBox(e) {
+	var box = $(e).parent();
+	box.slideUp('fast');
+}
+
 
 
 /*==== On click ====*/
@@ -70,6 +77,10 @@ $('.jumbotron .btn').click(function(){
 	scroller(this);
 });
 
+/*---- Close box ----*/
+$(document).on('click', '.close', function() {
+	closeBox(this);
+});
 
 
 /*==== On resize ====*/
