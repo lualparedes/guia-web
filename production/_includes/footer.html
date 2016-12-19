@@ -60,14 +60,40 @@
 
 	// create style rules for each post card
 	{% for post in site.posts %}
-		console.log('post');
 		thumb = "/img/posts/"+"{{ post.date | date: '%Y-%m-%d-' }}"+"{{ post.slug }}"+"-hero.png";
 		appendStyles += '.' + '{{ post.slug }}' + ' .card-img { background: url(' + thumb + ') center; background-size: cover; }'
-
 	{% endfor %}
 
 	// insert required styles
 	$('head style').append(appendStyles);
+
+	//https://rudrastyh.com/javascript/get-photos-from-instagram.html
+
+	var token = '1719207098.583ee62.73f138350b2342ecb765a5249dc44d81';
+	var userId = '3291338706';
+	var numOfPosts = 6;
+
+	$.ajax({
+		url: 'https://api.instagram.com/v1/users/self/media/recent',
+		type: "GET",
+	    dataType: "jsonp",
+	    data: {
+	    	access_token: token,
+	    	count: numOfPosts
+	    }
+	}).done(function(data){
+
+		var img = data.data[0].images.standard_resolution.url;
+		var	url = data.data[0].link;
+
+		for (var i = 0; i <= 5; i++) {
+			img = data.data[i].images.standard_resolution.url;
+			url = data.data[i].link;
+			$('.insta li:nth-child(' + (i+1) + ') img').attr('src',img);
+			$('.insta li:nth-child(' + (i+1) + ') a').attr('href',url);
+		}
+
+	});
 
 </script>
 {% endif %}

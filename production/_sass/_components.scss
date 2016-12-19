@@ -352,17 +352,18 @@ header {
 .insta {
 	margin: 2rem 0;
 	overflow: hidden;
+	@include flex();
 	ul {
 		background: $text_c;
-		display: flex;
+		@include flex();
 		height: 240px;	
 		li {
+			list-style-type: none;
 			position: relative;
-			@include flex();
 			&:hover {
 				button {
 					display: block;
-					opacity: .8;
+					background: rgba(#000,.3);
 				}
 			}
 			button {
@@ -373,7 +374,7 @@ header {
 				z-index: 4;
 				display: none;
 				&:hover {
-					opacity: 1;
+					background: #fff;
 				}
 			}
 		}
