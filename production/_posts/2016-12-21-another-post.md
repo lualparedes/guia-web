@@ -3,7 +3,7 @@ layout: post
 class: post
 post-date: 2016-12-21
 jumbotron-title: Another post
-title: 1 Another post
+title: 2 Another post
 comments: true
 ---
 

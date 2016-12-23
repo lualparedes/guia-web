@@ -56,9 +56,7 @@ function prevSlide() {
 
 		// avoid flashes
 		// hide the crossing of the last
-		if (currentIndex == (numOfPrevSlides+1) && numOfSlides%2 == 0) {
-			$('.slide:nth-child('+(i+1)+')').css('z-index','-1');
-		} else if (currentIndex == numOfPrevSlides && numOfSlides%2 != 0) {
+		if (currentIndex == numOfNextSlides) {
 			$('.slide:nth-child('+(i+1)+')').css('z-index','-1');
 		}
 		// restore the previous last 
@@ -67,9 +65,7 @@ function prevSlide() {
 		}
 
 		// change the slides
-		if (currentIndex <= numOfPrevSlides && numOfSlides%2 == 0) {// # prev slides = # next slides +1 (even n)
-			slides[i].relativeIndex = currentIndex + 1;
-		} else if (currentIndex < numOfPrevSlides) {// # prev slides = # next slides (odd n)
+		if (currentIndex < numOfNextSlides) {
 			slides[i].relativeIndex = currentIndex + 1;
 		} else {
 			slides[i].relativeIndex = -numOfPrevSlides;
@@ -103,13 +99,11 @@ function nextSlide() {
 		}
 		// restore the previous first 
 		if (slides[i].relativeIndex == numOfPrevSlides) {
-			$('.slide:nth-child('+(i+1)+')').css('z-index','0');
+			$('.slide:nth-child('+(i+1)+')').css('z-index','');
 		}
 				
 		// change the slides
-		if (currentIndex >= -numOfPrevSlides && numOfSlides%2 == 0) {// # prev slides = # next slides +1 (even n)
-			slides[i].relativeIndex = currentIndex - 1;
-		} else if (currentIndex > -numOfPrevSlides) {// # prev slides = # next slides (odd n)
+		if (currentIndex > -numOfNextSlides) {
 			slides[i].relativeIndex = currentIndex - 1;
 		} else {
 			slides[i].relativeIndex = numOfPrevSlides;
