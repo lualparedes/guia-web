@@ -1,6 +1,29 @@
 {% include header.html %}
 
-{% include hero.html %}
+<div class="slider">
+	<ul class="slides">
+		{% for post in site.posts %}
+		{% if forloop.index < 4 %}
+		<li class="slide hero {{ post.slug }}">
+			<div class="wrap">
+				<div class="jumbotron">
+					<a href="{{ post.url }}">
+						<h1>
+							<span>{{ post.title }}</span>
+						</h1>
+					</a>
+				</div>
+			</div>
+		</li>
+		{% endif %}
+		{% endfor %}
+	</ul>
+	<div class="slider-controls slider-prev icon-chevron-left no-trans"></div>
+	<div class="slider-controls slider-next icon-chevron-right no-trans"></div>
+	<div class="slider-pagination">
+		
+	</div>
+</div>
 
 <div class="main">
 	{{ content }}

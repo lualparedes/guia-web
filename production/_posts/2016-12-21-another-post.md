@@ -1,9 +1,9 @@
 ---
 layout: post
 class: post
-post-date: 2016-12-13
-jumbotron-title: Hello World
-title: 2 Hello World
+post-date: 2016-12-21
+jumbotron-title: Another post
+title: 1 Another post
 comments: true
 ---
 

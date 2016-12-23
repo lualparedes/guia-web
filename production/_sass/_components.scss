@@ -12,6 +12,8 @@ hero
 
 jumbotron
 
+slider
+
 card
 	card-news
 	card-result
@@ -214,6 +216,74 @@ header {
 	}
 }
 
+.slider {
+	height: 90vh;
+	min-height: 480px;
+	max-height: 770px;
+	background: $text_c;
+	position: relative;
+	overflow: hidden;
+	.slides {
+		height: 100%;
+		.slide {
+			transition: left .5s ease-out;
+			height: 100%;
+			width: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	}
+	.slider-controls {
+		font-size: 2rem;
+		padding: .5rem;
+		color: #fff;
+		text-shadow: 0 0 8px rgba(#000,.7);
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		opacity: .5;
+		z-index: 11;
+		cursor: pointer;
+		&:hover {
+			opacity: 1;
+		}
+	}
+	.slider-prev {
+		left: 0;
+	}
+	.slider-next {
+		right: 0;
+	}
+	.slider-pagination {
+		display: flex;
+		position: absolute;
+		bottom: 1rem;
+		left: 50%;
+		transform: translateX(-50%);
+		span {
+			transition: all 0s;
+			display: block;
+			height: .7rem;
+			width: .7rem;
+			margin-right: 1rem;
+			background: #fff;
+			border-radius: 100%;
+			opacity: .5;
+			cursor: pointer;
+			&:hover {
+				opacity: 1;
+			}
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+		.current {
+			opacity: 1;
+		}
+	}
+}
+
 .card {
 	background: #fff;
 	overflow: hidden;
@@ -268,6 +338,8 @@ header {
 		background: url(../img/hero-bg.png) center;
 		height: 100%;
 		position: absolute;
+		border-top-right-radius: 3px;
+		border-bottom-right-radius: 3px;
 		top: 0;
 		right: 0;
 		background-size: cover;
