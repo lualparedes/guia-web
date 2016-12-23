@@ -182,12 +182,10 @@ for (var i = 0; i < numOfSlides; i++) {
 $('.slider-pagination span:first-child').addClass('current');
 
 
-/*---- Autoslide ----
+/*---- Autoslide ----*/
 setInterval(function(){
-
-	
-
-}, 2000);*/
+	nextSlide();
+}, 8000);
 
 
 /*==== Navigation controls ====*/
