@@ -3,7 +3,7 @@ $(document).ready(function(){
 
 
 /***** Slider module *****/
-
+// only tested with 3+ slides
 
 /*==== Classes ====*/
 
@@ -15,8 +15,6 @@ function slide(aI, rI) {
 	this.relativeIndex = rI;
 
 }
-
-
 
 /*==== Global variables ====*/
 
@@ -37,7 +35,7 @@ function setInitIndexes() {
 	}
 }
 
-function setSlidesPos() {
+function setSlidesPos() { // also called on resize
 	// set proper styles (left value)
 	viewportWidth = $(window).width();
 	for (var i = 0; i < numOfSlides; i++) {
@@ -120,9 +118,31 @@ function nextSlide() {
 
 	// apply styles
 	setSlidesPos();
-
 }
 
+function goToSlide(index) {
+
+	var targetIndex;
+
+	// get the relative index of the corresponding slide
+	for (var k = 0; k < numOfSlides; k++) {
+		if (slides[k].absoluteIndex == index) {
+			targetIndex = slides[k].relativeIndex;
+		}
+	}
+	
+	if (targetIndex < 0) { 
+		// if negative index exec prevSlide "distance" times
+		for (var j = 0; j < -targetIndex; j++) {
+			prevSlide();
+		}
+	} else if (targetIndex > 0) {
+		// if positive index exec nextSlide "distance" times
+		for (var j = 0; j < targetIndex; j++) {
+			nextSlide();
+		}
+	}
+}
 
 /*==== Initial setup ====*/
 
@@ -169,6 +189,9 @@ setInterval(function(){
 
 }, 2000);*/
 
+
+/*==== Navigation controls ====*/
+
 /*---- Prev slide ----*/
 $('.slider-prev').click(function(){
 	prevSlide();
@@ -183,6 +206,12 @@ $('.slider-next').click(function(){
 });
 swipeArea.on('swipeleft', function(){
 	nextSlide();
+});
+
+/*---- Pagination ----*/
+$('.slider-pagination span').click(function(){
+	var index = $(this).index();
+	goToSlide(index);
 });
 
 
@@ -330,6 +359,9 @@ $(window).resize(function(){
 		// update width
 		$('.search').css('width',avaHeaderSpace+'px');
 	}
+
+	/*---- Slider ----*/
+	setSlidesPos();
 	
 });
 
