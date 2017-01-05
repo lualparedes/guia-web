@@ -1,238 +1,220 @@
 $(document).ready(function(){
 
 
-
-/***** Slider module *****/
+/********** Slider module **********/
 // only tested with 3+ slides
 
-/*==== Classes ====*/
-
-/*---- Slide ----*/
-function slide(aI, rI) {
-
-	// properties
-	this.absoluteIndex = aI;
-	this.relativeIndex = rI;
-
-}
-
-/*==== Global variables ====*/
-
-var numOfSlides = $('.slider li').length;
-var swipeArea = $('.slider');
-    swipeArea = new Hammer(swipeArea[0]);
-var slides = [];
-var numOfPrevSlides;
-var numOfNextSlides;
-var viewportWidth;
-
-/*==== Functions ====*/
-
-function setInitIndexes() {
-	// set relative indexes
-	for (var i = 1; i <= numOfPrevSlides; i++) {
-		slides[numOfSlides-i].relativeIndex = -i;
-	}
-}
-
-function setSlidesPos() { // also called on resize
-	// set proper styles (left value)
-	viewportWidth = $(window).width();
-	for (var i = 0; i < numOfSlides; i++) {
-		$('.slide:nth-child('+(i+1)+')').css('left', slides[i].relativeIndex*viewportWidth + 'px');
-	}
-}
-
-function prevSlide() {
-
-	// reset indexes (the logic is counterintuitive)
-	// think of it as when scrolling: you browse down but the page goes up
-	for (var i = 0; i < numOfSlides; i++) {
-
-		var currentIndex = slides[i].relativeIndex; // it reflects the state before the movement
-		var aI = slides[i].absoluteIndex;
-
-		// avoid flashes
-		// hide the crossing of the last
-		if (currentIndex == numOfNextSlides) {
-			$('.slide:nth-child('+(i+1)+')').css('z-index','-1');
-		}
-		// restore the previous last 
-		if (currentIndex == -numOfPrevSlides) {	
-			$('.slide:nth-child('+(i+1)+')').css('z-index','');
-		}
-
-		// change the slides
-		if (currentIndex < numOfNextSlides) {
-			slides[i].relativeIndex = currentIndex + 1;
-		} else {
-			slides[i].relativeIndex = -numOfPrevSlides;
-		}
-
-		// change pagination
-		if (currentIndex == -1) {
-			$('.slider-pagination span:nth-child('+(aI+1)+')').addClass('current');
-		} else {
-			$('.slider-pagination span:nth-child('+(aI+1)+')').removeClass('current');
-		}
-
-	}
-
-	// apply styles
-	setSlidesPos();
-}
-
-function nextSlide() {
-
-	// reset indexes
-	for (var i = 0; i < numOfSlides; i++) {
-
-		var currentIndex = slides[i].relativeIndex; // it reflects the state before the movement
-		var aI = slides[i].absoluteIndex;	
-
-		// avoid flashes
-		// hide the crossing of the first
-		if (currentIndex == -numOfPrevSlides) {
-			$('.slide:nth-child('+(i+1)+')').css('z-index','-1');
-		}
-		// restore the previous first 
-		if (slides[i].relativeIndex == numOfPrevSlides) {
-			$('.slide:nth-child('+(i+1)+')').css('z-index','');
-		}
-				
-		// change the slides
-		if (currentIndex > -numOfNextSlides) {
-			slides[i].relativeIndex = currentIndex - 1;
-		} else {
-			slides[i].relativeIndex = numOfPrevSlides;
-		}
-
-		// change pagination
-		if (currentIndex == 1) {
-			$('.slider-pagination span:nth-child('+(aI+1)+')').addClass('current');
-		} else {
-			$('.slider-pagination span:nth-child('+(aI+1)+')').removeClass('current');
-		}
-
-	}
-
-	// apply styles
-	setSlidesPos();
-}
-
-function goToSlide(index) {
-
-	var targetIndex;
-
-	// get the relative index of the corresponding slide
-	for (var k = 0; k < numOfSlides; k++) {
-		if (slides[k].absoluteIndex == index) {
-			targetIndex = slides[k].relativeIndex;
-		}
-	}
+if ($(this).attr('title') == 'GUIA USB - Blog') {
 	
-	if (targetIndex < 0) { 
-		// if negative index exec prevSlide "distance" times
-		for (var j = 0; j < -targetIndex; j++) {
-			prevSlide();
-		}
-	} else if (targetIndex > 0) {
-		// if positive index exec nextSlide "distance" times
-		for (var j = 0; j < targetIndex; j++) {
-			nextSlide();
+	/*==== Classes ====*/
+
+	/*---- Slide ----*/
+	function slide(aI, rI) {
+
+		// properties
+		this.absoluteIndex = aI;
+		this.relativeIndex = rI;
+
+	}
+
+	/*==== Global variables ====*/
+
+	var numOfSlides = $('.slider li').length;
+	var swipeArea = $('.slider');
+	    swipeArea = new Hammer(swipeArea[0]);
+	var slides = [];
+	var numOfPrevSlides;
+	var numOfNextSlides;
+	var viewportWidth;
+
+	/*==== Functions ====*/
+
+	function setInitIndexes() {
+		// set relative indexes
+		for (var i = 1; i <= numOfPrevSlides; i++) {
+			slides[numOfSlides-i].relativeIndex = -i;
 		}
 	}
+
+	function setSlidesPos() { // also called on resize
+		// set proper styles (left value)
+		viewportWidth = $(window).width();
+		for (var i = 0; i < numOfSlides; i++) {
+			$('.slide:nth-child('+(i+1)+')').css('left', slides[i].relativeIndex*viewportWidth + 'px');
+		}
+	}
+
+	function prevSlide() {
+
+		// reset indexes (the logic is counterintuitive)
+		// think of it as when scrolling: you browse down but the page goes up
+		for (var i = 0; i < numOfSlides; i++) {
+
+			var currentIndex = slides[i].relativeIndex; // it reflects the state before the movement
+			var aI = slides[i].absoluteIndex;
+
+			// avoid flashes
+			// hide the crossing of the last
+			if (currentIndex == numOfNextSlides) {
+				$('.slide:nth-child('+(i+1)+')').css('z-index','-1');
+			}
+			// restore the previous last 
+			if (currentIndex == -numOfPrevSlides) {	
+				$('.slide:nth-child('+(i+1)+')').css('z-index','');
+			}
+
+			// change the slides
+			if (currentIndex < numOfNextSlides) {
+				slides[i].relativeIndex = currentIndex + 1;
+			} else {
+				slides[i].relativeIndex = -numOfPrevSlides;
+			}
+
+			// change pagination
+			if (currentIndex == -1) {
+				$('.slider-pagination span:nth-child('+(aI+1)+')').addClass('current');
+			} else {
+				$('.slider-pagination span:nth-child('+(aI+1)+')').removeClass('current');
+			}
+
+		}
+
+		// apply styles
+		setSlidesPos();
+	}
+
+	function nextSlide() {
+
+		// reset indexes
+		for (var i = 0; i < numOfSlides; i++) {
+
+			var currentIndex = slides[i].relativeIndex; // it reflects the state before the movement
+			var aI = slides[i].absoluteIndex;	
+
+			// avoid flashes
+			// hide the crossing of the first
+			if (currentIndex == -numOfPrevSlides) {
+				$('.slide:nth-child('+(i+1)+')').css('z-index','-1');
+			}
+			// restore the previous first 
+			if (slides[i].relativeIndex == numOfPrevSlides) {
+				$('.slide:nth-child('+(i+1)+')').css('z-index','');
+			}
+					
+			// change the slides
+			if (currentIndex > -numOfNextSlides) {
+				slides[i].relativeIndex = currentIndex - 1;
+			} else {
+				slides[i].relativeIndex = numOfPrevSlides;
+			}
+
+			// change pagination
+			if (currentIndex == 1) {
+				$('.slider-pagination span:nth-child('+(aI+1)+')').addClass('current');
+			} else {
+				$('.slider-pagination span:nth-child('+(aI+1)+')').removeClass('current');
+			}
+
+		}
+
+		// apply styles
+		setSlidesPos();
+	}
+
+	function goToSlide(index) {
+
+		var targetIndex;
+
+		// get the relative index of the corresponding slide
+		for (var k = 0; k < numOfSlides; k++) {
+			if (slides[k].absoluteIndex == index) {
+				targetIndex = slides[k].relativeIndex;
+			}
+		}
+		
+		if (targetIndex < 0) { 
+			// if negative index exec prevSlide "distance" times
+			for (var j = 0; j < -targetIndex; j++) {
+				prevSlide();
+			}
+		} else if (targetIndex > 0) {
+			// if positive index exec nextSlide "distance" times
+			for (var j = 0; j < targetIndex; j++) {
+				nextSlide();
+			}
+		}
+	}
+
+	/*==== Initial setup ====*/
+
+	/*---- Slide object generation ----*/
+
+	for (var i = 0; i < numOfSlides; i++) {
+		var thisSlide = new slide(i,i);
+		slides.push(thisSlide);
+	}
+
+
+	/*---- Ordering the slides ----*/
+	// calculte how many slides go after current one (rI = 0)
+	// and how many go before current one
+
+	if (numOfSlides%2 == 0) { // even number of slides
+
+		numOfPrevSlides = numOfSlides/2 - 1;
+		numOfNextSlides = numOfPrevSlides + 1;
+		setInitIndexes();
+		setSlidesPos();
+
+	} else { // odd number of slides
+
+		numOfPrevSlides = Math.floor(numOfSlides/2);
+		numOfNextSlides = numOfPrevSlides;
+		setInitIndexes();
+		setSlidesPos();
+
+	}
+
+	/*---- Generate pagination ----*/
+	for (var i = 0; i < numOfSlides; i++) {
+		$('.slider-pagination').append('<span></span>');
+	}
+	$('.slider-pagination span:first-child').addClass('current');
+
+
+	/*---- Autoslide ----*/
+	setInterval(function(){
+		nextSlide();
+	}, 8000);
+
+
+	/*==== Navigation controls ====*/
+
+	/*---- Prev slide ----*/
+	$('.slider-prev').click(function(){
+		prevSlide();
+	});
+	swipeArea.on('swiperight', function(){
+		prevSlide();
+	});
+
+	/*---- Next slide ----*/
+	$('.slider-next').click(function(){
+		nextSlide();
+	});
+	swipeArea.on('swipeleft', function(){
+		nextSlide();
+	});
+
+	/*---- Pagination ----*/
+	$('.slider-pagination span').click(function(){
+		var index = $(this).index();
+		goToSlide(index);
+	});
+
 }
 
-/*==== Initial setup ====*/
-
-/*---- Slide object generation ----*/
-
-for (var i = 0; i < numOfSlides; i++) {
-	var thisSlide = new slide(i,i);
-	slides.push(thisSlide);
-}
-
-
-
-/*---- Ordering the slides ----*/
-// calculte how many slides go after current one (rI = 0)
-// and how many go before current one
-
-if (numOfSlides%2 == 0) { // even number of slides
-
-	numOfPrevSlides = numOfSlides/2 - 1;
-	numOfNextSlides = numOfPrevSlides + 1;
-	setInitIndexes();
-	setSlidesPos();
-
-} else { // odd number of slides
-
-	numOfPrevSlides = Math.floor(numOfSlides/2);
-	numOfNextSlides = numOfPrevSlides;
-	setInitIndexes();
-	setSlidesPos();
-
-}
-
-/*---- Generate pagination ----*/
-for (var i = 0; i < numOfSlides; i++) {
-	$('.slider-pagination').append('<span></span>');
-}
-$('.slider-pagination span:first-child').addClass('current');
-
-
-/*---- Autoslide ----*/
-setInterval(function(){
-	nextSlide();
-}, 8000);
-
-
-/*==== Navigation controls ====*/
-
-/*---- Prev slide ----*/
-$('.slider-prev').click(function(){
-	prevSlide();
-});
-swipeArea.on('swiperight', function(){
-	prevSlide();
-});
-
-/*---- Next slide ----*/
-$('.slider-next').click(function(){
-	nextSlide();
-});
-swipeArea.on('swipeleft', function(){
-	nextSlide();
-});
-
-/*---- Pagination ----*/
-$('.slider-pagination span').click(function(){
-	var index = $(this).index();
-	goToSlide(index);
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/********** End of Slider module **********/
 
 
 
@@ -359,7 +341,9 @@ $(window).resize(function(){
 	}
 
 	/*---- Slider ----*/
-	setSlidesPos();
+	if ($(document).attr('title') == 'GUIA USB - Blog') {
+		setSlidesPos();
+	}
 	
 });
 
