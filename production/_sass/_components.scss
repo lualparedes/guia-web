@@ -426,12 +426,15 @@ header {
 	overflow: hidden;
 	@include flex();
 	ul {
+		width: 100%;
 		background: $text_c;
 		@include flex();
 		height: 240px;	
 		li {
 			list-style-type: none;
 			position: relative;
+			width: 22px;
+			flex-grow: 1;
 			&:hover {
 				button {
 					display: block;
