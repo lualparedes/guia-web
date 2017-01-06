@@ -4,9 +4,7 @@ Website dev for astronomy group GUIA USB
 
 ## Template architecture
 
-The pages in the root are written in Markdown and thus only contain the front matter and plain text content. If the a single requires some custom HTML is prefered to have a particular layout inside `/_layouts` and use it through the front matter. This way, templates and content are kept nicely separated.
-
-Templates, in turn make use of includes in order to keep the code easy to maintain. The goal is to be as modular as possible, applying OOP principles to avoid repetition and clumsiness.
+Regular templating system using an OOP-inspired approach.
 
 ### List of basic templates (applied to several pages)
 - `page.html`: used for pages that only contain a hero and content. The hero has several skins: the basic one with just a title inside the jumbotron or others with more complex inner content. The content of the page can be anything, although it's mainly expected to be just text, otherwise it's contained in an include (content_name-of-page.html).
@@ -33,11 +31,11 @@ Templates, in turn make use of includes in order to keep the code easy to mainta
 ```
 - Post image for hero
 ```
-/img/posts/YYY-MM-DD-slog-hero.png
+/img/posts/YYY-MM-DD-slug-hero.png
 ```
 - Post images
 ```
-/img/posts/YYY-MM-DD-slog-img-NN.png
+/img/posts/YYY-MM-DD-slug-img-NN.png
 ```
 
 <br><br>
