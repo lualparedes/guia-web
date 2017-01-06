@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="/css/styles.css">
+	<link rel="stylesheet" href="{{ site.url }}/css/styles.css">
 	{% if page.id == 'index' %}
 		{% include style_index.html %}
 	{% elsif page.id == 'nosotros' %}
@@ -18,7 +18,7 @@
 	{% elsif page.class == 'post' %}
 		{% include style_post.html %}
 	{% endif %}
-	<link rel="shortcut icon" type="image/png" href="{{ "/img/favicon.png" | prepend: site.baseurl }}" >
+	<link rel="shortcut icon" type="image/png" href="{{ "img/favicon.png" | prepend: site.baseurl }}" >
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="El Grupo Universitario de Investigaciones Astronómicas (GUIA) es una organización estudiantil de la Universidad Simón Bolívar con más de dos décadas promoviendo la astronomía en Venezuela.">
 	<title>{{ page.title }}</title>
@@ -30,29 +30,29 @@
 <nav class="drawer">
 	<ul>
 		{% if page.id == 'index' %}
-		<li class="page-current"><a href="/">Inicio</a></li>
+		<li class="page-current"><a href="{{ site.url }}">Inicio</a></li>
 		{% else %}
-		<li><a href="/">Inicio</a></li>
+		<li><a href="{{ site.url }}">Inicio</a></li>
 		{% endif %}
 		{% if page.id == 'nosotros' %}
-		<li class="page-current"><a href="/nosotros">Nosotros</a></li>
+		<li class="page-current"><a href="{{ site.url }}/nosotros">Nosotros</a></li>
 		{% else %}
-		<li><a href="/nosotros">Nosotros</a></li>
+		<li><a href="{{ site.url }}/nosotros">Nosotros</a></li>
 		{% endif %}
 		{% if page.id == 'calendario' %}
-		<li class="page-current"><a href="/calendario">Calendario</a></li>
+		<li class="page-current"><a href="{{ site.url }}/calendario">Calendario</a></li>
 		{% else %}
-		<li><a href="/calendario">Calendario</a></li>
+		<li><a href="{{ site.url }}/calendario">Calendario</a></li>
 		{% endif %}
 		{% if page.id == 'blog' or page.class == 'post' %}
-		<li class="page-current"><a href="/blog">Blog</a></li>
+		<li class="page-current"><a href="{{ site.url }}/blog">Blog</a></li>
 		{% else %}
-		<li><a href="/blog">Blog</a></li>
+		<li><a href="{{ site.url }}/blog">Blog</a></li>
 		{% endif %}
 		{% if page.id == 'contacto' %}
-		<li class="page-current"><a href="/contacto">Contacto</a></li>
+		<li class="page-current"><a href="{{ site.url }}/contacto">Contacto</a></li>
 		{% else %}
-		<li><a href="/contacto">Contacto</a></li>
+		<li><a href="{{ site.url }}/contacto">Contacto</a></li>
 		{% endif %}
 	</ul>
 </nav><!--
@@ -62,7 +62,7 @@
 
 	<header>
 		<div class="logo">
-		<a href="/">
+		<a href="{{ site.url }}">
 			<svg
 				class="logo-squared"
 			   viewBox="0 0 139.64458 58.53659"
@@ -86,33 +86,33 @@
 		<nav class="nav-desktop">
 			<ul>
 				{% if page.id == 'index' %}
-				<li class="page-current"><a href="/">Inicio</a></li>
+				<li class="page-current"><a href="{{ site.url }}">Inicio</a></li>
 				{% else %}
-				<li><a href="/">Inicio</a></li>
+				<li><a href="{{ site.url }}">Inicio</a></li>
 				{% endif %}
 				{% if page.id == 'nosotros' %}
-				<li class="page-current"><a href="/nosotros">Nosotros</a></li>
+				<li class="page-current"><a href="{{ site.url }}/nosotros">Nosotros</a></li>
 				{% else %}
-				<li><a href="/nosotros">Nosotros</a></li>
+				<li><a href="{{ site.url }}/nosotros">Nosotros</a></li>
 				{% endif %}
 				{% if page.id == 'calendario' %}
-				<li class="page-current"><a href="/calendario">Calendario</a></li>
+				<li class="page-current"><a href="{{ site.url }}/calendario">Calendario</a></li>
 				{% else %}
-				<li><a href="/calendario">Calendario</a></li>
+				<li><a href="{{ site.url }}/calendario">Calendario</a></li>
 				{% endif %}
 				{% if page.id == 'blog' or page.class == 'post' %}
-				<li class="page-current"><a href="/blog">Blog</a></li>
+				<li class="page-current"><a href="{{ site.url }}/blog">Blog</a></li>
 				{% else %}
-				<li><a href="/blog">Blog</a></li>
+				<li><a href="{{ site.url }}/blog">Blog</a></li>
 				{% endif %}
 				{% if page.id == 'contacto' %}
-				<li class="page-current"><a href="/contacto">Contacto</a></li>
+				<li class="page-current"><a href="{{ site.url }}/contacto">Contacto</a></li>
 				{% else %}
-				<li><a href="/contacto">Contacto</a></li>
+				<li><a href="{{ site.url }}/contacto">Contacto</a></li>
 				{% endif %}
 			</ul>
 		</nav>
-		<form class="search" action="/resultados" method="get">
+		<form class="search" action="{{ site.url }}/resultados" method="get">
 			<input type="text" class="in" id="search-box" name="query">
 			<input type="submit" value="&#59653;" class="icon-search">
 			<span class="search-mask"></span>

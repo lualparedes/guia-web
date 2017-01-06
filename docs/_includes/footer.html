@@ -4,7 +4,7 @@
 				<div>
 				<h2>Nuestra web</h2>
 				<ul>
-					<li><a href="/">Inicio</a></li>
+					<li><a href="{{ site.url }}">Inicio</a></li>
 					<li><a href="nosotros">Nosotros</a></li>
 					<li><a href="calendario">Calendario</a></li>
 					<li><a href="blog">Blog</a></li>
@@ -51,9 +51,9 @@
 <!-- Scripts -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 {% if page.id == 'blog' %}
-<script src="/js/hammer.js"></script>
+<script src="{{ site.url }}/js/hammer.js"></script>
 {% endif %}
-<script src="/js/scripts.js"></script>
+<script src="{{ site.url }}/js/scripts.js"></script>
 {% if page.id == 'blog' %}
 <script>
 
@@ -63,7 +63,7 @@
 
 	// create style rules for each post card
 	{% for post in site.posts %}
-		thumb = "/img/posts/"+"{{ post.date | date: '%Y-%m-%d-' }}"+"{{ post.slug }}"+"-hero.png";
+		thumb = "{{ site.url }}/img/posts/"+"{{ post.date | date: '%Y-%m-%d-' }}"+"{{ post.slug }}"+"-hero.png";
 		appendStyles += '.' + '{{ post.slug }}' + ' .card-img { background: url(' + thumb + ') center; background-size: cover; }'
 		{% if forloop.index < 4 %}
 			appendStyles += '.' + '{{ post.slug }}' + '.hero { background: url(' + thumb + ') center; background-size: cover; }'
@@ -246,7 +246,7 @@
 					"content": {{ post.content | strip_html | strip_newlines | jsonify }},
 					"url": "{{ post.url | xml_escape }}",
 					"slug": "{{ post.slug }}",
-					"thumb": "/img/posts/"+"{{ post.date | date: '%Y-%m-%d-' }}"+"{{ post.slug }}"+"-hero.png"
+					"thumb": "{{ site.url }}/img/posts/"+"{{ post.date | date: '%Y-%m-%d-' }}"+"{{ post.slug }}"+"-hero.png"
 				}
 				{% unless forloop.last %},{% endunless %}
 			{% endfor %}
