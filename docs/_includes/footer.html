@@ -87,6 +87,8 @@
 	    }
 	}).done(function(data){
 
+		console.log(data);
+
 		var img = data.data[0].images.standard_resolution.url;
 		var	url = data.data[0].link;
 
