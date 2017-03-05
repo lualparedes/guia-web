@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="{{ site.url }}/css/styles.css">
+	<link rel="stylesheet" href="{{ "/css/styles.css" | prepend: site.baseurl }}">
 	{% if page.id == 'index' %}
 		{% include style_index.html %}
 	{% elsif page.id == 'nosotros' %}
@@ -30,29 +30,29 @@
 <nav class="drawer">
 	<ul>
 		{% if page.id == 'index' %}
-		<li class="page-current"><a href="{{ site.url }}">Inicio</a></li>
+		<li class="page-current"><a href="{{ site.baseurl }}">Inicio</a></li>
 		{% else %}
-		<li><a href="{{ site.url }}">Inicio</a></li>
+		<li><a href="{{ site.baseurl }}">Inicio</a></li>
 		{% endif %}
 		{% if page.id == 'nosotros' %}
-		<li class="page-current"><a href="{{ site.url }}/nosotros">Nosotros</a></li>
+		<li class="page-current"><a href="{{ "/nosotros" | prepend: site.baseurl }}">Nosotros</a></li>
 		{% else %}
-		<li><a href="{{ site.url }}/nosotros">Nosotros</a></li>
+		<li><a href="{{ "/nosotros" | prepend: site.baseurl }}">Nosotros</a></li>
 		{% endif %}
 		{% if page.id == 'calendario' %}
-		<li class="page-current"><a href="{{ site.url }}/calendario">Calendario</a></li>
+		<li class="page-current"><a href="{{ "/calendario" | prepend: site.baseurl }}">Calendario</a></li>
 		{% else %}
-		<li><a href="{{ site.url }}/calendario">Calendario</a></li>
+		<li><a href="{{ "/calendario" | prepend: site.baseurl }}">Calendario</a></li>
 		{% endif %}
 		{% if page.id == 'blog' or page.class == 'post' %}
-		<li class="page-current"><a href="{{ site.url }}/blog">Blog</a></li>
+		<li class="page-current"><a href="{{ "/blog" | prepend: site.baseurl }}">Blog</a></li>
 		{% else %}
-		<li><a href="{{ site.url }}/blog">Blog</a></li>
+		<li><a href="{{ "/blog" | prepend: site.baseurl }}">Blog</a></li>
 		{% endif %}
 		{% if page.id == 'contacto' %}
-		<li class="page-current"><a href="{{ site.url }}/contacto">Contacto</a></li>
+		<li class="page-current"><a href="{{ "/contacto" | prepend: site.baseurl }}">Contacto</a></li>
 		{% else %}
-		<li><a href="{{ site.url }}/contacto">Contacto</a></li>
+		<li><a href="{{ "/contacto" | prepend: site.baseurl }}">Contacto</a></li>
 		{% endif %}
 	</ul>
 </nav><!--
@@ -62,7 +62,7 @@
 
 	<header>
 		<div class="logo">
-		<a href="{{ site.url }}">
+		<a href="{{ site.baseurl }}">
 			<svg
 				class="logo-squared"
 			   viewBox="0 0 139.64458 58.53659"
@@ -86,33 +86,33 @@
 		<nav class="nav-desktop">
 			<ul>
 				{% if page.id == 'index' %}
-				<li class="page-current"><a href="{{ site.url }}">Inicio</a></li>
+				<li class="page-current"><a href="{{ site.baseurl }}">Inicio</a></li>
 				{% else %}
-				<li><a href="{{ site.url }}">Inicio</a></li>
+				<li><a href="{{ site.baseurl }}">Inicio</a></li>
 				{% endif %}
 				{% if page.id == 'nosotros' %}
-				<li class="page-current"><a href="{{ site.url }}/nosotros">Nosotros</a></li>
+				<li class="page-current"><a href="{{ site.baseurl }}/nosotros">Nosotros</a></li>
 				{% else %}
-				<li><a href="{{ site.url }}/nosotros">Nosotros</a></li>
+				<li><a href="{{ site.baseurl }}/nosotros">Nosotros</a></li>
 				{% endif %}
 				{% if page.id == 'calendario' %}
-				<li class="page-current"><a href="{{ site.url }}/calendario">Calendario</a></li>
+				<li class="page-current"><a href="{{ site.baseurl }}/calendario">Calendario</a></li>
 				{% else %}
-				<li><a href="{{ site.url }}/calendario">Calendario</a></li>
+				<li><a href="{{ site.baseurl }}/calendario">Calendario</a></li>
 				{% endif %}
 				{% if page.id == 'blog' or page.class == 'post' %}
-				<li class="page-current"><a href="{{ site.url }}/blog">Blog</a></li>
+				<li class="page-current"><a href="{{ site.baseurl }}/blog">Blog</a></li>
 				{% else %}
-				<li><a href="{{ site.url }}/blog">Blog</a></li>
+				<li><a href="{{ site.baseurl }}/blog">Blog</a></li>
 				{% endif %}
 				{% if page.id == 'contacto' %}
-				<li class="page-current"><a href="{{ site.url }}/contacto">Contacto</a></li>
+				<li class="page-current"><a href="{{ site.baseurl }}/contacto">Contacto</a></li>
 				{% else %}
-				<li><a href="{{ site.url }}/contacto">Contacto</a></li>
+				<li><a href="{{ site.baseurl }}/contacto">Contacto</a></li>
 				{% endif %}
 			</ul>
 		</nav>
-		<form class="search" action="{{ site.url }}/resultados" method="get">
+		<form class="search" action="{{ site.baseurl }}/resultados" method="get">
 			<input type="text" class="in" id="search-box" name="query">
 			<input type="submit" value="&#59653;" class="icon-search">
 			<span class="search-mask"></span>
