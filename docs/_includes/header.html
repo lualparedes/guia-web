@@ -30,9 +30,9 @@
 <nav class="drawer">
 	<ul>
 		{% if page.id == 'index' %}
-		<li class="page-current"><a href="{{ site.baseurl }}">Inicio</a></li>
+		<li class="page-current"><a href="{{ site.baseurl }}/">Inicio</a></li>
 		{% else %}
-		<li><a href="{{ site.baseurl }}">Inicio</a></li>
+		<li><a href="{{ site.baseurl }}/">Inicio</a></li>
 		{% endif %}
 		{% if page.id == 'nosotros' %}
 		<li class="page-current"><a href="{{ "/nosotros" | prepend: site.baseurl }}">Nosotros</a></li>
@@ -62,7 +62,7 @@
 
 	<header>
 		<div class="logo">
-		<a href="{{ site.baseurl }}">
+		<a href="{{ site.baseurl }}/">
 			<svg
 				class="logo-squared"
 			   viewBox="0 0 139.64458 58.53659"
@@ -86,9 +86,9 @@
 		<nav class="nav-desktop">
 			<ul>
 				{% if page.id == 'index' %}
-				<li class="page-current"><a href="{{ site.baseurl }}">Inicio</a></li>
+				<li class="page-current"><a href="{{ site.baseurl }}/">Inicio</a></li>
 				{% else %}
-				<li><a href="{{ site.baseurl }}">Inicio</a></li>
+				<li><a href="{{ site.baseurl }}/">Inicio</a></li>
 				{% endif %}
 				{% if page.id == 'nosotros' %}
 				<li class="page-current"><a href="{{ site.baseurl }}/nosotros">Nosotros</a></li>

@@ -17,7 +17,7 @@ title: GUIA USB
 email: guia@usb.ve
 description: > # this means to ignore newlines until "baseurl:"
   El Grupo Universitario de Investigaciones Astronómicas (GUIA) es una organización estudiantil de la Universidad Simón Bolívar con más de dos décadas promoviendo la astronomía en Venezuela.
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/guia-web" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: guia_usb
 github_username:  lualparedes

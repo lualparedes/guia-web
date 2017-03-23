@@ -246,7 +246,7 @@
 					"author": "{{ post.author | xml_escape }}",
 					"category": "{{ post.category | xml_escape }}",
 					"content": {{ post.content | strip_html | strip_newlines | jsonify }},
-					"url": "{{ post.url | xml_escape }}",
+					"url": "{{ site.baseurl }}{{ post.url | xml_escape }}",
 					"slug": "{{ post.slug }}",
 					"thumb": "{{ site.baseurl }}/img/posts/"+"{{ post.date | date: '%Y-%m-%d-' }}"+"{{ post.slug }}"+"-hero.png"
 				}
