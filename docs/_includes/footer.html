@@ -110,7 +110,7 @@
 
 	/*---- Globals ----*/
 
-	var validation = [1,1,1]; // array of booleans, each item corresponds to a field in the form
+	var validation = [0,0,0]; // array of booleans, each item corresponds to a field in the form
 
 
 	/*---- Functions ----*/
@@ -188,17 +188,17 @@
 
 		if (validation.reduce( (prev, curr) => prev + curr ) == 3) { // all three values are valid
 
+			console.log('ha');
 			// send data
 			$.ajax({
-				type: 'POST',
-				url: 'https://php-contact-form-lual.herokuapp.com/contact-form.php',
-				data: {
-						subject: 'Nuevo contacto web',
-						to: 'lualps94@gmail.com',
-						name: $('#name').val(),
-						email: $('#email').val(),
-						msg: $('#msg').val()
-					}
+			    url: "https://formspree.io/guia@usb.ve", 
+			    method: "POST",
+			    data: {
+			    	Nombre: $('#name').val(),
+			    	Correo: $('#email').val(),
+			    	Mensaje: $('#msg').val()
+			    },
+			    dataType: "json"
 			}).done(function(){
 				$('.msg').html('Mensaje enviado <span class="icon-">&#59650;</span>' +
 						'<span class=\"close\"><span class=\"no-trans\">x</span></span>');
@@ -209,11 +209,9 @@
 						'<span class=\"close\"><span class=\"no-trans\">x</span></span>');
 				$('.msg').removeClass('ok').addClass('err');
 				$('.msg').slideDown('fast');
-			});	
-
-		} else { // gi
-			console.log('invalid');
-		}
+			});
+	
+		} 
 	});
 </script>
 {% endif %}
